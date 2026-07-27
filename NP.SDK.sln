@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NP.SDK.Core", "src\NP.SDK.Core\NP.SDK.Core.csproj", "{D0ACD8A9-37C0-4BD9-B24D-8FFE1CAB638E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NP.SDK.Contracts", "src\NP.SDK.Contracts\NP.SDK.Contracts.csproj", "{B60E09D3-9866-4F1F-A1CC-20CED1C3CE03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NP.SDK.Sandbox", "src\NP.SDK.Sandbox\NP.SDK.Sandbox.csproj", "{322FDB02-9C3A-4A96-A29E-7E122C954F83}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0ACD8A9-37C0-4BD9-B24D-8FFE1CAB638E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0ACD8A9-37C0-4BD9-B24D-8FFE1CAB638E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0ACD8A9-37C0-4BD9-B24D-8FFE1CAB638E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0ACD8A9-37C0-4BD9-B24D-8FFE1CAB638E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B60E09D3-9866-4F1F-A1CC-20CED1C3CE03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B60E09D3-9866-4F1F-A1CC-20CED1C3CE03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B60E09D3-9866-4F1F-A1CC-20CED1C3CE03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B60E09D3-9866-4F1F-A1CC-20CED1C3CE03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{322FDB02-9C3A-4A96-A29E-7E122C954F83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{322FDB02-9C3A-4A96-A29E-7E122C954F83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{322FDB02-9C3A-4A96-A29E-7E122C954F83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{322FDB02-9C3A-4A96-A29E-7E122C954F83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
