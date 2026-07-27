@@ -17,6 +17,9 @@ namespace NP.SDK.UI.PersianControls.Controls
 
         public NPPersianTextBox()
         {
+            if (LicenseManager.UsageMode == LicenseUsageMode.Designtime)
+                return;
+
             InputMode = InputMode.Any;
             KeyboardMode = KeyboardMode.System;
             DigitMode = DigitMode.System;

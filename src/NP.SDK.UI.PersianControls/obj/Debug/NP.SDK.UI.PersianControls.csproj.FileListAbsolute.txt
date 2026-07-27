@@ -1,0 +1,8 @@
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.UI.PersianControls\bin\Debug\NP.SDK.UI.PersianControls.dll
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.UI.PersianControls\bin\Debug\NP.SDK.UI.PersianControls.pdb
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.UI.PersianControls\obj\Debug\NP.SDK.UI.PersianControls.dll
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.UI.PersianControls\obj\Debug\NP.SDK.UI.PersianControls.pdb
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.UI.PersianControls\obj\Debug\NP.SDK.UI.PersianControls.Controls.NPDateTextBox.resources
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.UI.PersianControls\obj\Debug\NP.SDK.UI.PersianControls.csproj.GenerateResource.Cache
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.UI.PersianControls\obj\Debug\NP.SDK.UI.PersianControls.csproj.AssemblyReference.cache
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.UI.PersianControls\obj\Debug\NP.SDK.UI.PersianControls.csproj.CoreCompileInputs.cache

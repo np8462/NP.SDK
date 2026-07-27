@@ -16,7 +16,7 @@ namespace NP.SDK.Sandbox
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmControlExplorer());
+            Application.Run(new MainForm());
         }
     }
 }

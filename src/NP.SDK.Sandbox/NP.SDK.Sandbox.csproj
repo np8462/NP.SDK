@@ -44,16 +44,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmControlExplorer.cs">
+    <Compile Include="Forms\PersianControls\FrmControlExplorer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmControlExplorer.Designer.cs">
+    <Compile Include="Forms\PersianControls\FrmControlExplorer.Designer.cs">
       <DependentUpon>FrmControlExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PersianControls\FrmNPDateTextBoxTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PersianControls\FrmNPDateTextBoxTest.Designer.cs">
+      <DependentUpon>FrmNPDateTextBoxTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmControlExplorer.resx">
+    <EmbeddedResource Include="Forms\PersianControls\FrmControlExplorer.resx">
       <DependentUpon>FrmControlExplorer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PersianControls\FrmNPDateTextBoxTest.resx">
+      <DependentUpon>FrmNPDateTextBoxTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
