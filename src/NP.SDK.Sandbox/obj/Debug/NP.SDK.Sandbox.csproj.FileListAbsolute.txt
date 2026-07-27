@@ -10,7 +10,8 @@ E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\bin\Debug\NP.SDK.UI.PersianContro
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\obj\Debug\NP.SDK.Sandbox.Forms.PersianControls.FrmControlExplorer.resources
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\obj\Debug\NP.SDK.Sandbox.Forms.PersianControls.FrmNPDateTextBoxTest.resources
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\obj\Debug\NP.SDK.Sandbox.MainForm.resources
-E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\obj\Debug\NP.SDK.Sandbox.csproj.AssemblyReference.cache
-E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\obj\Debug\NP.SDK.Sandbox.csproj.SuggestedBindingRedirects.cache
-E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\obj\Debug\NP.SDK.Sandbox.csproj.CoreCompileInputs.cache
-E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\obj\Debug\NP.SDK.Sandbox.csproj.CopyComplete
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\bin\Debug\NP.SDK.Contracts.dll
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\bin\Debug\NP.SDK.Core.dll
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\bin\Debug\NP.SDK.Contracts.pdb
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\bin\Debug\NP.SDK.Core.pdb
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\obj\Debug\NP.SDK.Sandbox.csprojResolveAssemblyReference.cache

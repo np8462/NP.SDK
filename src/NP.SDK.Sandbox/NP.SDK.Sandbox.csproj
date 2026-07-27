@@ -64,6 +64,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\LoggingTest.cs" />
     <EmbeddedResource Include="Forms\PersianControls\FrmControlExplorer.resx">
       <DependentUpon>FrmControlExplorer.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,6 +97,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NP.SDK.Contracts\NP.SDK.Contracts.csproj">
+      <Project>{b60e09d3-9866-4f1f-a1cc-20ced1c3ce03}</Project>
+      <Name>NP.SDK.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NP.SDK.Core\NP.SDK.Core.csproj">
+      <Project>{d0acd8a9-37c0-4bd9-b24d-8ffe1cab638e}</Project>
+      <Name>NP.SDK.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NP.SDK.UI.PersianControls\NP.SDK.UI.PersianControls.csproj">
       <Project>{0c71e534-de04-401a-8bf0-709acb41e5af}</Project>
       <Name>NP.SDK.UI.PersianControls</Name>
