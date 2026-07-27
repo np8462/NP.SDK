@@ -1,4 +1,6 @@
 # NP.SDK
 Reusable .NET SDK components for desktop applications and developer tools.
 
+
 این پروژه تازه شروع به ساخت گرفته است و در حال ساخت اولیه قرار دارد...
+پروژه ها، رفرنس کلاس و سرویس و کامپونتها بطور بطئی در حال ساخت و آپدیت و اضافه شدن هستند...
