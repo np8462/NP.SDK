@@ -1,0 +1,14 @@
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\bin\Debug\NP.SDK.Sandbox.exe.config
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\bin\Debug\NP.SDK.Sandbox.exe
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\bin\Debug\NP.SDK.Sandbox.pdb
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\obj\Debug\NP.SDK.Sandbox.Properties.Resources.resources
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\obj\Debug\NP.SDK.Sandbox.csproj.GenerateResource.Cache
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\obj\Debug\NP.SDK.Sandbox.exe
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\obj\Debug\NP.SDK.Sandbox.pdb
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\bin\Debug\NP.SDK.UI.PersianControls.dll
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\bin\Debug\NP.SDK.UI.PersianControls.pdb
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\obj\Debug\NP.SDK.Sandbox.FrmControlExplorer.resources
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\obj\Debug\NP.SDK.Sandbox.csproj.AssemblyReference.cache
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\obj\Debug\NP.SDK.Sandbox.csproj.SuggestedBindingRedirects.cache
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\obj\Debug\NP.SDK.Sandbox.csproj.CoreCompileInputs.cache
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\obj\Debug\NP.SDK.Sandbox.csproj.CopyComplete
