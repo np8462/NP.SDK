@@ -1,0 +1,86 @@
+﻿[
+{
+  "Time": "2026-07-28 18:25:46",
+  "Message": "[2026-07-28 18:25:46] [Info] === Identity Test Started ==="
+},
+{
+  "Time": "2026-07-28 18:25:46",
+  "Message": "[2026-07-28 18:25:46] [Debug] Permissions created."
+},
+{
+  "Time": "2026-07-28 18:25:46",
+  "Message": "[2026-07-28 18:25:46] [Debug] Role created: Administrator"
+},
+{
+  "Time": "2026-07-28 18:25:46",
+  "Message": "[2026-07-28 18:25:46] [Debug] Permission count after duplicate test: 3"
+},
+{
+  "Time": "2026-07-28 18:25:46",
+  "Message": "[2026-07-28 18:25:46] [Debug] User created: navid"
+},
+{
+  "Time": "2026-07-28 18:25:46",
+  "Message": "[2026-07-28 18:25:46] [Debug] Role assigned to user: Administrator"
+},
+{
+  "Time": "2026-07-28 18:25:46",
+  "Message": "[2026-07-28 18:25:46] [Debug] Role count after duplicate test: 1"
+},
+{
+  "Time": "2026-07-28 18:25:46",
+  "Message": "[2026-07-28 18:25:46] [Info] User ID: user-001"
+},
+{
+  "Time": "2026-07-28 18:25:46",
+  "Message": "[2026-07-28 18:25:46] [Info] User Name: navid"
+},
+{
+  "Time": "2026-07-28 18:25:46",
+  "Message": "[2026-07-28 18:25:46] [Info] Display Name: Navid Piri"
+},
+{
+  "Time": "2026-07-28 18:25:46",
+  "Message": "[2026-07-28 18:25:46] [Info] User Status: Active"
+},
+{
+  "Time": "2026-07-28 18:25:47",
+  "Message": "[2026-07-28 18:25:47] [Info] Role: Administrator"
+},
+{
+  "Time": "2026-07-28 18:25:47",
+  "Message": "[2026-07-28 18:25:47] [Info]   Permission: user.read"
+},
+{
+  "Time": "2026-07-28 18:25:47",
+  "Message": "[2026-07-28 18:25:47] [Info]   Permission: user.write"
+},
+{
+  "Time": "2026-07-28 18:25:47",
+  "Message": "[2026-07-28 18:25:47] [Info]   Permission: data.read"
+},
+{
+  "Time": "2026-07-28 18:25:47",
+  "Message": "[2026-07-28 18:25:47] [Debug] Permission removed: True"
+},
+{
+  "Time": "2026-07-28 18:25:47",
+  "Message": "[2026-07-28 18:25:47] [Debug] Permission count after removal: 2"
+},
+{
+  "Time": "2026-07-28 18:25:47",
+  "Message": "[2026-07-28 18:25:47] [Debug] Role removed: True"
+},
+{
+  "Time": "2026-07-28 18:25:47",
+  "Message": "[2026-07-28 18:25:47] [Debug] Role count after removal: 0"
+},
+{
+  "Time": "2026-07-28 18:25:47",
+  "Message": "[2026-07-28 18:25:47] [Info] Identity Test completed successfully."
+},
+{
+  "Time": "2026-07-28 18:25:47",
+  "Message": "[2026-07-28 18:25:47] [Info] === Identity Test Finished ==="
+}
+]

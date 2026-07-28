@@ -39,6 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Identity\Enums\UserStatus.cs" />
+    <Compile Include="Identity\IPermission.cs" />
+    <Compile Include="Identity\IRole.cs" />
+    <Compile Include="Identity\IUser.cs" />
     <Compile Include="Logging\ILogEntry.cs" />
     <Compile Include="Logging\ILogger.cs" />
     <Compile Include="Logging\LogLevel.cs" />

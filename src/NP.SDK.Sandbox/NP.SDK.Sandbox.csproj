@@ -64,6 +64,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\IdentityTest.cs" />
     <Compile Include="Tests\LoggingTest.cs" />
     <EmbeddedResource Include="Forms\PersianControls\FrmControlExplorer.resx">
       <DependentUpon>FrmControlExplorer.cs</DependentUpon>

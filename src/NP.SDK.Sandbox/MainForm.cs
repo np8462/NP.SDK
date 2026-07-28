@@ -56,5 +56,11 @@ namespace NP.SDK.Sandbox
 
             MessageBox.Show("Logging test completed.");
         }
+
+        private void btnTestIdentity_Click(object sender, EventArgs e)
+        {
+            Tests.IdentityTest.Run();
+            MessageBox.Show("Test identify completed.");
+        }
     }
 }

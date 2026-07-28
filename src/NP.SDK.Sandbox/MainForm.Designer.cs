@@ -31,6 +31,7 @@
             this.btnNPPersianTextBox = new System.Windows.Forms.Button();
             this.btnNPDateTextBox = new System.Windows.Forms.Button();
             this.btnTestLogging = new System.Windows.Forms.Button();
+            this.btnTestIdentity = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnNPPersianTextBox
@@ -63,11 +64,22 @@
             this.btnTestLogging.UseVisualStyleBackColor = true;
             this.btnTestLogging.Click += new System.EventHandler(this.btnTestLogging_Click);
             // 
+            // btnTestIdentity
+            // 
+            this.btnTestIdentity.Location = new System.Drawing.Point(12, 99);
+            this.btnTestIdentity.Name = "btnTestIdentity";
+            this.btnTestIdentity.Size = new System.Drawing.Size(116, 23);
+            this.btnTestIdentity.TabIndex = 3;
+            this.btnTestIdentity.Text = "Test Identity";
+            this.btnTestIdentity.UseVisualStyleBackColor = true;
+            this.btnTestIdentity.Click += new System.EventHandler(this.btnTestIdentity_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.btnTestIdentity);
             this.Controls.Add(this.btnTestLogging);
             this.Controls.Add(this.btnNPDateTextBox);
             this.Controls.Add(this.btnNPPersianTextBox);
@@ -82,5 +94,6 @@
         private System.Windows.Forms.Button btnNPPersianTextBox;
         private System.Windows.Forms.Button btnNPDateTextBox;
         private System.Windows.Forms.Button btnTestLogging;
+        private System.Windows.Forms.Button btnTestIdentity;
     }
 }
