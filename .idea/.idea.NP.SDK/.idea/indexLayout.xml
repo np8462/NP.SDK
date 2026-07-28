@@ -5,6 +5,8 @@
       <Path>docs</Path>
     </attachedFolders>
     <explicitIncludes />
-    <explicitExcludes />
+    <explicitExcludes>
+      <Path>docs</Path>
+    </explicitExcludes>
   </component>
 </project>
