@@ -32,6 +32,7 @@
             this.btnNPDateTextBox = new System.Windows.Forms.Button();
             this.btnTestLogging = new System.Windows.Forms.Button();
             this.btnTestIdentity = new System.Windows.Forms.Button();
+            this.btnMergeFiles = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnNPPersianTextBox
@@ -74,11 +75,22 @@
             this.btnTestIdentity.UseVisualStyleBackColor = true;
             this.btnTestIdentity.Click += new System.EventHandler(this.btnTestIdentity_Click);
             // 
+            // btnMergeFiles
+            // 
+            this.btnMergeFiles.Location = new System.Drawing.Point(156, 12);
+            this.btnMergeFiles.Name = "btnMergeFiles";
+            this.btnMergeFiles.Size = new System.Drawing.Size(116, 23);
+            this.btnMergeFiles.TabIndex = 4;
+            this.btnMergeFiles.Text = "Merge Files";
+            this.btnMergeFiles.UseVisualStyleBackColor = true;
+            this.btnMergeFiles.Click += new System.EventHandler(this.btnMergeFiles_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.btnMergeFiles);
             this.Controls.Add(this.btnTestIdentity);
             this.Controls.Add(this.btnTestLogging);
             this.Controls.Add(this.btnNPDateTextBox);
@@ -95,5 +107,6 @@
         private System.Windows.Forms.Button btnNPDateTextBox;
         private System.Windows.Forms.Button btnTestLogging;
         private System.Windows.Forms.Button btnTestIdentity;
+        private System.Windows.Forms.Button btnMergeFiles;
     }
 }
