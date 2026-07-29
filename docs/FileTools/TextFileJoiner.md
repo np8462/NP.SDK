@@ -108,7 +108,7 @@ Part of the NP.SDK project.
 
 ## معرفی
 
-** TextFileJoiner** 
+**TextFileJoiner** 
 
 یک ابزار ساده و سبک در پروژه **NP.SDK** است که امکان ادغام چندین فایل متنی را در قالب یک فایل خروجی فراهم می‌کند.
 
