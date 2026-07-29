@@ -1,4 +1,7 @@
-﻿using NP.Services.Bridge;
+# RuntimeBridgeBootstrap
+
+```csharp
+using NP.Services.Bridge;
 using NP.Services.Commands;
 using NP.Services.Routing;
 using NP.Services.Server;
@@ -52,3 +55,9 @@ namespace NP.Host.RuntimeBridge
         }
     }
 }
+...
+```
+
+## توضیح
+
+این کلاس رو بحالت md درآوردم برای تست خواندن chatgpt...ai.
