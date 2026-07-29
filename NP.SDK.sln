@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NP.SDK.Sandbox", "src\NP.SD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NP.SDK.UI.PersianControls", "src\NP.SDK.UI.PersianControls\NP.SDK.UI.PersianControls.csproj", "{0C71E534-DE04-401A-8BF0-709ACB41E5AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NP.SDK.Server", "src\NP.SDK.Server\NP.SDK.Server.csproj", "{6E9C7E11-0C0D-4922-AF07-EAC6C3FF3038}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{0C71E534-DE04-401A-8BF0-709ACB41E5AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C71E534-DE04-401A-8BF0-709ACB41E5AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C71E534-DE04-401A-8BF0-709ACB41E5AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E9C7E11-0C0D-4922-AF07-EAC6C3FF3038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E9C7E11-0C0D-4922-AF07-EAC6C3FF3038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E9C7E11-0C0D-4922-AF07-EAC6C3FF3038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E9C7E11-0C0D-4922-AF07-EAC6C3FF3038}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

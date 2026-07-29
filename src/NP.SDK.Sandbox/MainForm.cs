@@ -1,5 +1,7 @@
 ﻿using NP.SDK.Core.IO.FileTools;
 using NP.SDK.Sandbox.Forms.PersianControls;
+using NP.SDK.Sandbox.Tests;
+using NP.SDK.Server.Hosting;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +18,7 @@ namespace NP.SDK.Sandbox
     {
         FrmControlExplorer frmNPPersianTextBox;
         FrmNPDateTextBoxTest frmNPDateTextBoxTest;
+        FrmRuntimeServerTest frmRuntimeServerTest;
 
         public MainForm()
         {
@@ -132,5 +135,13 @@ namespace NP.SDK.Sandbox
                     MessageBoxIcon.Error);
             }
         }
+
+        private void btnStartRuntime_Click(object sender, EventArgs e)
+        {
+            if (frmRuntimeServerTest == null || frmRuntimeServerTest .IsDisposed)
+                frmRuntimeServerTest  = new FrmRuntimeServerTest();
+            frmRuntimeServerTest.Show();
+        }
+
     }
 }

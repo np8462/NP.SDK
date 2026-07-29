@@ -64,6 +64,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\FrmRuntimeServerTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRuntimeServerTest.Designer.cs">
+      <DependentUpon>FrmRuntimeServerTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tests\IdentityTest.cs" />
     <Compile Include="Tests\LoggingTest.cs" />
     <EmbeddedResource Include="Forms\PersianControls\FrmControlExplorer.resx">
@@ -84,6 +90,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\FrmRuntimeServerTest.resx">
+      <DependentUpon>FrmRuntimeServerTest.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -105,6 +114,10 @@
     <ProjectReference Include="..\NP.SDK.Core\NP.SDK.Core.csproj">
       <Project>{d0acd8a9-37c0-4bd9-b24d-8ffe1cab638e}</Project>
       <Name>NP.SDK.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NP.SDK.Server\NP.SDK.Server.csproj">
+      <Project>{6e9c7e11-0c0d-4922-af07-eac6c3ff3038}</Project>
+      <Name>NP.SDK.Server</Name>
     </ProjectReference>
     <ProjectReference Include="..\NP.SDK.UI.PersianControls\NP.SDK.UI.PersianControls.csproj">
       <Project>{0c71e534-de04-401a-8bf0-709acb41e5af}</Project>

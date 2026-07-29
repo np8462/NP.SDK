@@ -43,9 +43,13 @@
     <Compile Include="Identity\IPermission.cs" />
     <Compile Include="Identity\IRole.cs" />
     <Compile Include="Identity\IUser.cs" />
+    <Compile Include="IMessageDispatcher.cs" />
+    <Compile Include="IRuntimeServer.cs" />
+    <Compile Include="IRuntimeTransport.cs" />
     <Compile Include="Logging\ILogEntry.cs" />
     <Compile Include="Logging\ILogger.cs" />
     <Compile Include="Logging\LogLevel.cs" />
+    <Compile Include="Messages\RuntimeMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
