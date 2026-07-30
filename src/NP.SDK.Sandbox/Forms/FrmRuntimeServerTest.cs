@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NP.SDK.Server.Hosting;
+using System.Net;
+using System.IO;
 
 namespace NP.SDK.Sandbox.Tests
 {
@@ -40,7 +42,7 @@ namespace NP.SDK.Sandbox.Tests
         {
             if (InvokeRequired)
             {
-                Invoke(
+                BeginInvoke(
                     new Action<string>(
                         OnLogWritten),
                     message);
@@ -71,6 +73,44 @@ namespace NP.SDK.Sandbox.Tests
             _server.Dispatcher.Dispatch(
                 "test",
                 "Hello NP.SDK Runtime");
+        }
+
+        private void btnHttpTest_Click(
+            object sender,
+            EventArgs e)
+        {
+            HttpWebRequest request =
+                (HttpWebRequest)
+                WebRequest.Create(
+                    "http://127.0.0.1:5050/");
+                    //"http://localhost:5050/");
+
+            request.Method = "POST";
+
+            request.ContentType =
+                "application/json";
+
+            string json =
+                "{\"Command\":\"ping\",\"Data\":\"Hello Runtime\"}";
+
+            using (StreamWriter writer =
+                new StreamWriter(
+                    request.GetRequestStream()))
+            {
+                writer.Write(json);
+            }
+
+            HttpWebResponse response =
+                (HttpWebResponse)
+                request.GetResponse();
+
+            using (StreamReader reader =
+                new StreamReader(
+                    response.GetResponseStream()))
+            {
+                MessageBox.Show(
+                    reader.ReadToEnd());
+            }
         }
     }
 }

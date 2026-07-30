@@ -16,6 +16,7 @@ namespace NP.SDK.Server.Transport
     public class HttpTransport : IRuntimeTransport
     {
         public event Action<string> DataReceived;
+        public event Action<RuntimeMessage> MessageReceived;
 
         private HttpListener _listener;
 
@@ -27,17 +28,17 @@ namespace NP.SDK.Server.Transport
         {
         }
 
-        public HttpTransport(
-            MessageDispatcher dispatcher)
-        {
-            Dispatcher = dispatcher;
-        }
+        //public HttpTransport(
+        //    MessageDispatcher dispatcher)
+        //{
+        //    Dispatcher = dispatcher;
+        //}
 
-        public MessageDispatcher Dispatcher
-        {
-            get;
-            private set;
-        }
+        //public MessageDispatcher Dispatcher
+        //{
+        //    get;
+        //    private set;
+        //}
 
         public string Prefix
         {
@@ -106,8 +107,9 @@ namespace NP.SDK.Server.Transport
 
                     ProcessRequest(context);
                 }
-                catch
+                catch(Exception ex)
                 {
+                    
                 }
             }
         }
@@ -129,14 +131,26 @@ namespace NP.SDK.Server.Transport
                 new RuntimeMessage();
 
             message.Command = "http";
-
+            message.Source = "HttpTransport";
             message.Data = body;
 
-            Dispatcher.Dispatch(message);
+            OnMessageReceived(message);
 
             WriteResponse(
                 context,
                 "{\"success\":true}");
+        }
+
+        protected virtual void OnMessageReceived(
+    RuntimeMessage message)
+        {
+            Action<RuntimeMessage> handler =
+                MessageReceived;
+
+            if (handler != null)
+            {
+                handler(message);
+            }
         }
 
         private void WriteResponse(

@@ -32,6 +32,7 @@
             this.btnStop = new System.Windows.Forms.Button();
             this.txtLog = new System.Windows.Forms.RichTextBox();
             this.btnSendTest = new System.Windows.Forms.Button();
+            this.btnHttpTest = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStart
@@ -46,7 +47,7 @@
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(174, 12);
+            this.btnStop.Location = new System.Drawing.Point(343, 12);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(75, 23);
             this.btnStop.TabIndex = 1;
@@ -61,7 +62,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLog.Location = new System.Drawing.Point(12, 41);
             this.txtLog.Name = "txtLog";
-            this.txtLog.Size = new System.Drawing.Size(260, 208);
+            this.txtLog.Size = new System.Drawing.Size(406, 208);
             this.txtLog.TabIndex = 2;
             this.txtLog.Text = "";
             // 
@@ -75,11 +76,22 @@
             this.btnSendTest.UseVisualStyleBackColor = true;
             this.btnSendTest.Click += new System.EventHandler(this.btnSendTest_Click);
             // 
+            // btnHttpTest
+            // 
+            this.btnHttpTest.Location = new System.Drawing.Point(174, 12);
+            this.btnHttpTest.Name = "btnHttpTest";
+            this.btnHttpTest.Size = new System.Drawing.Size(75, 23);
+            this.btnHttpTest.TabIndex = 4;
+            this.btnHttpTest.Text = "Http Test";
+            this.btnHttpTest.UseVisualStyleBackColor = true;
+            this.btnHttpTest.Click += new System.EventHandler(this.btnHttpTest_Click);
+            // 
             // FrmRuntimeServerTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(430, 261);
+            this.Controls.Add(this.btnHttpTest);
             this.Controls.Add(this.btnSendTest);
             this.Controls.Add(this.txtLog);
             this.Controls.Add(this.btnStop);
@@ -96,5 +108,6 @@
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.RichTextBox txtLog;
         private System.Windows.Forms.Button btnSendTest;
+        private System.Windows.Forms.Button btnHttpTest;
     }
 }

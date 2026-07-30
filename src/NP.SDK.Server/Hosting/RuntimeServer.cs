@@ -45,13 +45,27 @@ namespace NP.SDK.Server.Hosting
                 new MessageDispatcher();
 
 
-            AddTransport(
-                new HttpTransport());
+            HttpTransport http =
+                new HttpTransport();
 
+            http.MessageReceived +=
+                Dispatcher.Dispatch;
+
+            AddTransport(http);
 
             AddTransport(
                 new WebSocketTransport());
 
+    //        WebSocketTransport ws =
+    //new WebSocketTransport();
+
+    //        ws.MessageReceived +=
+    //            Dispatcher.Dispatch;
+
+    //        AddTransport(ws);
+
+            CommandDispatcher =
+    new NP.SDK.Server.Dispatching.CommandDispatcher();
 
             WireEvents();
         }
@@ -98,15 +112,23 @@ namespace NP.SDK.Server.Hosting
                 return _running;
             }
         }
-        
+
+        public NP.SDK.Server.Dispatching.CommandDispatcher CommandDispatcher
+        {
+            get;
+            private set;
+        }
+
         //--------------------------------------------------
         // Events
         //--------------------------------------------------
         private void WireEvents()
         {
             Dispatcher.MessageReceived +=
-                OnMessageReceived;
+                    Dispatcher_MessageReceived;
 
+            Dispatcher.MessageReceived +=
+    Dispatcher_MessageReceived;
 
             foreach (IRuntimeTransport transport
                 in _transports)
@@ -115,6 +137,32 @@ namespace NP.SDK.Server.Hosting
                     OnTransportDataReceived;
             }
         }
+
+        private void Dispatcher_MessageReceived(
+            RuntimeMessage message)
+        {
+            Logger.Write(
+                "[" +
+                message.Source +
+                "] "
+                +
+                message.Command
+                +
+                " : "
+                +
+                message.Data);
+
+            CommandDispatcher.Execute(message);
+        }
+    //    private void Dispatcher_MessageReceived(
+    //RuntimeMessage message)
+    //    {
+    //        Logger.Write(
+    //            "Command : "
+    //            + message.Command);
+
+    //        CommandDispatcher.Execute(message);
+    //    }
 
         //--------------------------------------------------
         // Transport message
@@ -182,6 +230,7 @@ namespace NP.SDK.Server.Hosting
             foreach (IRuntimeTransport transport
                 in _transports)
             {
+                Logger.Write("Starting: " + transport.GetType().Name);
                 transport.Start();
             }
 

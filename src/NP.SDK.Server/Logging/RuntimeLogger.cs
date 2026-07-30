@@ -1,5 +1,5 @@
-﻿using NP.SDK.Core.Logging;
-using System;
+﻿using System;
+using System.Collections.Generic;
 
 namespace NP.SDK.Server.Logging
 {
@@ -8,28 +8,55 @@ namespace NP.SDK.Server.Logging
     /// </summary>
     public class RuntimeLogger
     {
-        public event Action<string> LogWritten;
-        //Logger _logs;
+        private readonly List<string> _items =
+            new List<string>();
 
-        public void Write(string message)
+        /// <summary>
+        /// Raised whenever a new log is written.
+        /// </summary>
+        public event Action<string> LogWritten;
+
+        /// <summary>
+        /// Gets all runtime logs.
+        /// </summary>
+        public IEnumerable<string> Items
+        {
+            get
+            {
+                return _items;
+            }
+        }
+
+        /// <summary>
+        /// Writes a runtime log entry.
+        /// </summary>
+        public void Write(
+            string message)
         {
             if (String.IsNullOrWhiteSpace(message))
                 return;
 
-            OnLogWritten(
+            string line =
                 DateTime.Now.ToString("HH:mm:ss")
                 + "  "
-                + message);
+                + message;
 
-            //_logs.Add(message);
+            _items.Add(line);
 
-
-            //if (LogWritten != null)
-            //{
-            //    LogWritten(message);
-            //}
+            OnLogWritten(line);
         }
 
+        /// <summary>
+        /// Clears all logs.
+        /// </summary>
+        public void Clear()
+        {
+            _items.Clear();
+        }
+
+        /// <summary>
+        /// Raises LogWritten event.
+        /// </summary>
         protected virtual void OnLogWritten(
             string message)
         {
