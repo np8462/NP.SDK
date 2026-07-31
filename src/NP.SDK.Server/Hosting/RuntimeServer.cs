@@ -8,6 +8,7 @@ using NP.SDK.Server.Logging;
 using NP.SDK.Server.Sessions;
 using NP.SDK.Server.Transport;
 using NP.SDK.Contracts.Messages;
+using System.Web.Script.Serialization;
 
 namespace NP.SDK.Server.Hosting
 {
@@ -65,7 +66,13 @@ namespace NP.SDK.Server.Hosting
     //        AddTransport(ws);
 
             CommandDispatcher =
-    new NP.SDK.Server.Dispatching.CommandDispatcher();
+    new CommandDispatcher();
+
+            CommandDispatcher.Register(
+                new PingCommandHandler());
+
+            CommandDispatcher.Register(
+                new TestCommandHandler());
 
             WireEvents();
         }
@@ -124,17 +131,19 @@ namespace NP.SDK.Server.Hosting
         //--------------------------------------------------
         private void WireEvents()
         {
-            Dispatcher.MessageReceived +=
-                    Dispatcher_MessageReceived;
+            Dispatcher.MessageReceived -=
+                Dispatcher_MessageReceived;
 
             Dispatcher.MessageReceived +=
-    Dispatcher_MessageReceived;
+                Dispatcher_MessageReceived;
 
             foreach (IRuntimeTransport transport
                 in _transports)
             {
+                //transport.DataReceived +=
+                //    OnTransportDataReceived;
                 transport.DataReceived +=
-                    OnTransportDataReceived;
+                    Transport_DataReceived;
             }
         }
 
@@ -142,18 +151,35 @@ namespace NP.SDK.Server.Hosting
             RuntimeMessage message)
         {
             Logger.Write(
-                "[" +
-                message.Source +
-                "] "
-                +
-                message.Command
-                +
-                " : "
-                +
-                message.Data);
+                "[" + message.Source + "] "
+                + message.Command
+                + " : "
+                + message.Data);
 
-            CommandDispatcher.Execute(message);
+            if (!CommandDispatcher.Dispatch(message))
+            {
+                Logger.Write(
+                    "Unknown Command : "
+                    + message.Command);
+            }
         }
+        //private void Dispatcher_MessageReceived(
+        //    RuntimeMessage message)
+        //{
+        //    Logger.Write(
+        //        "[" +
+        //        message.Source +
+        //        "] "
+        //        +
+        //        message.Command
+        //        +
+        //        " : "
+        //        +
+        //        message.Data);
+
+        //    //CommandDispatcher.Execute(message);
+        //    CommandDispatcher.Dispatch(message);
+        //}
     //    private void Dispatcher_MessageReceived(
     //RuntimeMessage message)
     //    {
@@ -167,23 +193,23 @@ namespace NP.SDK.Server.Hosting
         //--------------------------------------------------
         // Transport message
         //--------------------------------------------------
-        private void OnTransportDataReceived(
-            string data)
-        {
-            RuntimeMessage message =
-                new RuntimeMessage();
+        //private void OnTransportDataReceived(
+        //    string data)
+        //{
+        //    RuntimeMessage message =
+        //        new RuntimeMessage();
 
 
-            message.Command =
-                "transport";
+        //    message.Command =
+        //        "transport";
 
 
-            message.Data =
-                data;
+        //    message.Data =
+        //        data;
 
 
-            Dispatcher.Dispatch(message);
-        }
+        //    Dispatcher.Dispatch(message);
+        //}
 
         //--------------------------------------------------
         // Runtime message
@@ -260,6 +286,61 @@ namespace NP.SDK.Server.Hosting
 
             Logger.Write(
                 "Runtime Stopped");
+        }
+
+        private void Transport_DataReceived(string data)
+        {
+            if (data == "WebSocket Client Connected")
+            {
+                Logger.Write(data);
+
+                return;
+            }
+
+            if (data == "WebSocket Client Closed")
+            {
+                Logger.Write(data);
+
+                return;
+            }
+
+            RuntimeMessage message = null;
+
+
+            if (!String.IsNullOrWhiteSpace(data))
+            {
+                string text = data.Trim();
+
+                if (text.StartsWith("{"))
+                {
+                    try
+                    {
+                        JavaScriptSerializer serializer =
+                            new JavaScriptSerializer();
+
+                        message =
+                            serializer.Deserialize<RuntimeMessage>(
+                                text);
+                    }
+                    catch (Exception ex)
+                    {
+                        Logger.Write(
+                            "Deserialize Error : "
+                            + ex.Message);
+                    }
+                }
+            }
+
+            if (message == null)
+            {
+                message = new RuntimeMessage();
+
+                message.Command = "transport";
+
+                message.Data = data;
+            }
+
+            Dispatcher.Dispatch(message);
         }
     }
 }

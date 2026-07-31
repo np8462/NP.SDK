@@ -1,7 +1,9 @@
 ﻿using System;
+using NP.SDK.Contracts;
 using WebSocketSharp;
 using WebSocketSharp.Server;
-using NP.SDK.Contracts;
+using System.Web.Script.Serialization;
+using NP.SDK.Contracts.Messages;
 
 namespace NP.SDK.Server.Transport
 {
@@ -42,6 +44,7 @@ namespace NP.SDK.Server.Transport
         }
 
 
+
         public void Start()
         {
             if (_running)
@@ -65,7 +68,12 @@ namespace NP.SDK.Server.Transport
 
 
             _running = true;
+
+
+            //RaiseData(
+            //    "WebSocketTransport Started");
         }
+
 
 
         public void Stop()
@@ -77,17 +85,28 @@ namespace NP.SDK.Server.Transport
             if (_server != null)
             {
                 _server.Stop();
+
                 _server = null;
             }
 
 
             _running = false;
+
+
+            //RaiseData(
+            //    "WebSocketTransport Stopped");
         }
 
 
-        public void Send(string data)
+
+        public void Send(
+            string data)
         {
             if (!_running)
+                return;
+
+
+            if (_server == null)
                 return;
 
 
@@ -96,10 +115,28 @@ namespace NP.SDK.Server.Transport
         }
 
 
+
+        private void RaiseData(
+            string data)
+        {
+            Action<string> handler =
+                DataReceived;
+
+
+            if (handler != null)
+            {
+                handler(data);
+            }
+        }
+
+
+
+
         private class RuntimeBehavior :
             WebSocketBehavior
         {
             private readonly WebSocketTransport _owner;
+
 
 
             public RuntimeBehavior(
@@ -109,34 +146,48 @@ namespace NP.SDK.Server.Transport
             }
 
 
+
             protected override void OnMessage(
                 MessageEventArgs e)
             {
-                if (_owner.DataReceived != null)
-                {
-                    _owner.DataReceived(e.Data);
-                }
+                _owner.RaiseData(
+                    e.Data);
+
+    //            JavaScriptSerializer serializer =
+    //new JavaScriptSerializer();
+
+    //            RuntimeMessage message =
+    //                serializer.Deserialize<RuntimeMessage>(
+    //                    e.Data);
+
+    //            Dispatcher.Dispatch(message);
             }
+
 
 
             protected override void OnOpen()
             {
-                if (_owner.DataReceived != null)
-                {
-                    _owner.DataReceived(
-                        "WebSocket Client Connected");
-                }
+                _owner.RaiseData(
+                    "WebSocket Client Connected");
             }
+
 
 
             protected override void OnClose(
                 CloseEventArgs e)
             {
-                if (_owner.DataReceived != null)
-                {
-                    _owner.DataReceived(
-                        "WebSocket Client Closed");
-                }
+                _owner.RaiseData(
+                    "WebSocket Client Closed");
+            }
+
+
+
+            protected override void OnError(
+                WebSocketSharp.ErrorEventArgs e)
+            {
+                _owner.RaiseData(
+                    "WebSocket Error : "
+                    + e.Message);
             }
         }
     }

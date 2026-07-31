@@ -7,6 +7,7 @@ using NP.SDK.Core.Runtime;
 using NP.SDK.Server.Dispatching;
 using NP.SDK.Contracts.Messages;
 using NP.SDK.Contracts;
+using System.Web.Script.Serialization;
 
 namespace NP.SDK.Server.Transport
 {
@@ -107,9 +108,27 @@ namespace NP.SDK.Server.Transport
 
                     ProcessRequest(context);
                 }
-                catch(Exception ex)
+                catch (HttpListenerException)
                 {
-                    
+                    if (!_running)
+                        break;
+
+                    throw;
+                }
+                catch (ObjectDisposedException)
+                {
+                    if (!_running)
+                        break;
+
+                    throw;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(
+                        ex.Message);
+
+                    Console.WriteLine(
+                        ex.Message);
                 }
             }
         }
@@ -127,12 +146,41 @@ namespace NP.SDK.Server.Transport
                     reader.ReadToEnd();
             }
 
-            RuntimeMessage message =
-                new RuntimeMessage();
+            //RuntimeMessage message =
+            //    new RuntimeMessage();
 
-            message.Command = "http";
-            message.Source = "HttpTransport";
-            message.Data = body;
+            //message.Command = "http";
+            //message.Source = "HttpTransport";
+            //message.Data = body;
+
+            RuntimeMessage message = null;
+
+            try
+            {
+                JavaScriptSerializer serializer =
+                    new JavaScriptSerializer();
+
+                message =
+                    serializer.Deserialize<RuntimeMessage>(
+                        body);
+            }
+            catch
+            {
+            }
+
+            if (message == null)
+            {
+                message = new RuntimeMessage();
+
+                message.Command = "http";
+                
+                if (String.IsNullOrWhiteSpace(message.Source))
+                {
+                    message.Source = "HttpTransport";
+                }
+
+                message.Data = body;
+            }
 
             OnMessageReceived(message);
 
