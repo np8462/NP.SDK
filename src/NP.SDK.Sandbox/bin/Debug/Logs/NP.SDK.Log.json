@@ -1,0 +1,102 @@
+﻿[
+{
+  "Time": "2026-08-02 14:15:55",
+  "Message": "[2026-08-02 14:15:55] [Debug] Debug message"
+},
+{
+  "Time": "2026-08-02 14:15:55",
+  "Message": "[2026-08-02 14:15:55] [Info] Application started."
+},
+{
+  "Time": "2026-08-02 14:15:55",
+  "Message": "[2026-08-02 14:15:55] [Warning] This is a warning."
+},
+{
+  "Time": "2026-08-02 14:15:55",
+  "Message": "[2026-08-02 14:15:55] [Error] An error occurred.\r\nSystem.DivideByZeroException: Attempted to divide by zero.\r\n   at NP.SDK.Sandbox.Tests.LoggingTest.Run() in e:\\NotSaved\\Projects\\NP.SDK\\src\\NP.SDK.Sandbox\\Tests\\LoggingTest.cs:line 22"
+},
+{
+  "Time": "2026-08-02 14:16:02",
+  "Message": "[2026-08-02 14:16:02] [Info] === Identity Test Started ==="
+},
+{
+  "Time": "2026-08-02 14:16:02",
+  "Message": "[2026-08-02 14:16:02] [Debug] Permissions created."
+},
+{
+  "Time": "2026-08-02 14:16:02",
+  "Message": "[2026-08-02 14:16:02] [Debug] Role created: Administrator"
+},
+{
+  "Time": "2026-08-02 14:16:02",
+  "Message": "[2026-08-02 14:16:02] [Debug] Permission count after duplicate test: 3"
+},
+{
+  "Time": "2026-08-02 14:16:02",
+  "Message": "[2026-08-02 14:16:02] [Debug] User created: navid"
+},
+{
+  "Time": "2026-08-02 14:16:02",
+  "Message": "[2026-08-02 14:16:02] [Debug] Role assigned to user: Administrator"
+},
+{
+  "Time": "2026-08-02 14:16:02",
+  "Message": "[2026-08-02 14:16:02] [Debug] Role count after duplicate test: 1"
+},
+{
+  "Time": "2026-08-02 14:16:02",
+  "Message": "[2026-08-02 14:16:02] [Info] User ID: user-001"
+},
+{
+  "Time": "2026-08-02 14:16:02",
+  "Message": "[2026-08-02 14:16:02] [Info] User Name: navid"
+},
+{
+  "Time": "2026-08-02 14:16:02",
+  "Message": "[2026-08-02 14:16:02] [Info] Display Name: Navid Piri"
+},
+{
+  "Time": "2026-08-02 14:16:02",
+  "Message": "[2026-08-02 14:16:02] [Info] User Status: Active"
+},
+{
+  "Time": "2026-08-02 14:16:02",
+  "Message": "[2026-08-02 14:16:02] [Info] Role: Administrator"
+},
+{
+  "Time": "2026-08-02 14:16:02",
+  "Message": "[2026-08-02 14:16:02] [Info]   Permission: user.read"
+},
+{
+  "Time": "2026-08-02 14:16:02",
+  "Message": "[2026-08-02 14:16:02] [Info]   Permission: user.write"
+},
+{
+  "Time": "2026-08-02 14:16:02",
+  "Message": "[2026-08-02 14:16:02] [Info]   Permission: data.read"
+},
+{
+  "Time": "2026-08-02 14:16:02",
+  "Message": "[2026-08-02 14:16:02] [Debug] Permission removed: True"
+},
+{
+  "Time": "2026-08-02 14:16:02",
+  "Message": "[2026-08-02 14:16:02] [Debug] Permission count after removal: 2"
+},
+{
+  "Time": "2026-08-02 14:16:02",
+  "Message": "[2026-08-02 14:16:02] [Debug] Role removed: True"
+},
+{
+  "Time": "2026-08-02 14:16:02",
+  "Message": "[2026-08-02 14:16:02] [Debug] Role count after removal: 0"
+},
+{
+  "Time": "2026-08-02 14:16:02",
+  "Message": "[2026-08-02 14:16:02] [Info] Identity Test completed successfully."
+},
+{
+  "Time": "2026-08-02 14:16:03",
+  "Message": "[2026-08-02 14:16:03] [Info] === Identity Test Finished ==="
+}
+]

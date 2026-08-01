@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clients\IRuntimeClientTransport.cs" />
     <Compile Include="Clients\RuntimeClientInfo.cs" />
     <Compile Include="ICommandHandler.cs" />
     <Compile Include="Identity\Enums\UserStatus.cs" />

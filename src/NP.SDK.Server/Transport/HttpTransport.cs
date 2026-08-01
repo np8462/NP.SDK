@@ -228,5 +228,20 @@ namespace NP.SDK.Server.Transport
             // در نسخه بعدی می‌توانیم Clientها را نگه داریم
             // و Push انجام دهیم
         }
+        
+        public void Send(
+    RuntimeMessage message)
+        {
+            if (message == null)
+                return;
+
+
+            string json =
+                new System.Web.Script.Serialization.JavaScriptSerializer()
+                .Serialize(message);
+
+
+            Send(json);
+        }
     }
 }

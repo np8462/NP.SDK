@@ -119,9 +119,9 @@
       <Project>{6e9c7e11-0c0d-4922-af07-eac6c3ff3038}</Project>
       <Name>NP.SDK.Server</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NP.SDK.UI.PersianControls\NP.SDK.UI.PersianControls.csproj">
+    <ProjectReference Include="..\NP.SDK.UI.PersianControls\NP.SDK.UI.csproj">
       <Project>{0c71e534-de04-401a-8bf0-709acb41e5af}</Project>
-      <Name>NP.SDK.UI.PersianControls</Name>
+      <Name>NP.SDK.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

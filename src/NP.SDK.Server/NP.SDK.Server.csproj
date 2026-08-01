@@ -43,6 +43,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clients\RuntimeClient.cs" />
     <Compile Include="Context\RuntimeContextService.cs" />
     <Compile Include="Dispatching\MessageDispatcher.cs" />
     <Compile Include="Dispatching\CommandDispatcher.cs" />

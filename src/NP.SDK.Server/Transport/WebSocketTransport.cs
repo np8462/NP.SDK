@@ -4,6 +4,8 @@ using WebSocketSharp;
 using WebSocketSharp.Server;
 using System.Web.Script.Serialization;
 using NP.SDK.Contracts.Messages;
+using NP.SDK.Contracts.Messages;
+
 
 namespace NP.SDK.Server.Transport
 {
@@ -114,7 +116,20 @@ namespace NP.SDK.Server.Transport
                 .Broadcast(data);
         }
 
+        public void Send(
+    RuntimeMessage message)
+        {
+            if (message == null)
+                return;
 
+
+            string json =
+                new System.Web.Script.Serialization.JavaScriptSerializer()
+                .Serialize(message);
+
+
+            Send(json);
+        }
 
         private void RaiseData(
             string data)

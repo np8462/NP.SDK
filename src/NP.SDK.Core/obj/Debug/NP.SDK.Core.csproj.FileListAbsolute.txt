@@ -4,4 +4,6 @@ E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Core\obj\Debug\NP.SDK.Core.dll
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Core\obj\Debug\NP.SDK.Core.pdb
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Core\bin\Debug\NP.SDK.Contracts.dll
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Core\bin\Debug\NP.SDK.Contracts.pdb
-E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Core\obj\Debug\NP.SDK.Core.csprojResolveAssemblyReference.cache
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Core\obj\Debug\NP.SDK.Core.csproj.AssemblyReference.cache
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Core\obj\Debug\NP.SDK.Core.csproj.CoreCompileInputs.cache
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Core\obj\Debug\NP.SDK.Core.csproj.CopyComplete

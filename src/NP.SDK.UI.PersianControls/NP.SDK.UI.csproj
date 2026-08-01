@@ -41,21 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NPDateTextBox.cs">
+    <Compile Include="PersianControls\NPDateTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="NPDateTextBox.Designer.cs">
+    <Compile Include="PersianControls\NPDateTextBox.Designer.cs">
       <DependentUpon>NPDateTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="NPPersianTextBox.cs">
+    <Compile Include="PersianControls\NPPersianTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="PersianKeyboardMapper.cs" />
+    <Compile Include="PersianControls\PersianKeyboardMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TextInputValidator.cs" />
+    <Compile Include="PersianControls\TextInputValidator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="NPDateTextBox.resx">
+    <EmbeddedResource Include="PersianControls\NPDateTextBox.resx">
       <DependentUpon>NPDateTextBox.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

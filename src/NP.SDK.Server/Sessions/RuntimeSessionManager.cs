@@ -37,26 +37,52 @@ namespace NP.SDK.Server.Sessions
             }
         }
 
-        public RuntimeSession Create(string name)
+        public RuntimeSession Create(
+    string name,
+    string transport)
         {
             RuntimeSession session =
                 new RuntimeSession();
 
+
             session.Name = name;
+
+            session.Transport = transport;
 
             session.Connected = true;
 
-            session.LastActivity = DateTime.Now;
 
-            _sessions.Add(session.Id, session);
+            _sessions.Add(
+                session.Id,
+                session);
+
 
             if (SessionCreated != null)
-            {
                 SessionCreated(session);
-            }
+
 
             return session;
         }
+        //public RuntimeSession Create(string name)
+        //{
+        //    RuntimeSession session =
+        //        new RuntimeSession();
+
+        //    session.Name = name;
+
+        //    session.Connected = true;
+
+        //    session.LastActivity = DateTime.Now;
+
+        //    _sessions.Add(session.Id, session);
+
+        //    if (SessionCreated != null)
+        //    {
+        //        SessionCreated(session);
+        //    }
+
+        //    return session;
+        //}
 
         public RuntimeSession Get(Guid id)
         {
