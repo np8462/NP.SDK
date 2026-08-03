@@ -1,4 +1,6 @@
 ﻿using NP.SDK.Core.IO.FileTools;
+using NP.SDK.Sandbox.Clients;
+using NP.SDK.Sandbox.Forms;
 using NP.SDK.Sandbox.Forms.PersianControls;
 using NP.SDK.Sandbox.Tests;
 using NP.SDK.Server.Hosting;
@@ -19,6 +21,7 @@ namespace NP.SDK.Sandbox
         FrmControlExplorer frmNPPersianTextBox;
         FrmNPDateTextBoxTest frmNPDateTextBoxTest;
         FrmRuntimeServerTest frmRuntimeServerTest;
+        FrmServerClientTest frmServerClientTest;
 
         public MainForm()
         {
@@ -141,6 +144,13 @@ namespace NP.SDK.Sandbox
             if (frmRuntimeServerTest == null || frmRuntimeServerTest .IsDisposed)
                 frmRuntimeServerTest  = new FrmRuntimeServerTest();
             frmRuntimeServerTest.Show();
+        }
+
+        private void btnTestClient_Click(object sender, EventArgs e)
+        {
+            if (frmServerClientTest == null || frmServerClientTest.IsDisposed)
+                frmServerClientTest = new FrmServerClientTest();
+            frmServerClientTest.Show();
         }
 
     }

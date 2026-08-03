@@ -25,5 +25,10 @@ namespace NP.SDK.Contracts
 
         void Send(
             RuntimeMessage message);
+
+        IRuntimeTransport Transport
+        {
+            get;
+        }
     }
 }

@@ -44,6 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clients\SandboxRuntimeClient.cs" />
+    <Compile Include="Forms\FrmServerClientTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmServerClientTest.Designer.cs">
+      <DependentUpon>FrmServerClientTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PersianControls\FrmControlExplorer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +63,7 @@
     <Compile Include="Forms\PersianControls\FrmNPDateTextBoxTest.Designer.cs">
       <DependentUpon>FrmNPDateTextBoxTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logging\SandboxLogger.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,8 +78,12 @@
     <Compile Include="Forms\FrmRuntimeServerTest.Designer.cs">
       <DependentUpon>FrmRuntimeServerTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Server\SandboxRuntimeServer.cs" />
     <Compile Include="Tests\IdentityTest.cs" />
     <Compile Include="Tests\LoggingTest.cs" />
+    <EmbeddedResource Include="Forms\FrmServerClientTest.resx">
+      <DependentUpon>FrmServerClientTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PersianControls\FrmControlExplorer.resx">
       <DependentUpon>FrmControlExplorer.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +136,7 @@
       <Name>NP.SDK.UI</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

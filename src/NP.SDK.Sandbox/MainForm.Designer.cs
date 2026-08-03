@@ -34,6 +34,7 @@
             this.btnTestIdentity = new System.Windows.Forms.Button();
             this.btnMergeFiles = new System.Windows.Forms.Button();
             this.btnStartRuntime = new System.Windows.Forms.Button();
+            this.btnTestClient = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnNPPersianTextBox
@@ -96,11 +97,22 @@
             this.btnStartRuntime.UseVisualStyleBackColor = true;
             this.btnStartRuntime.Click += new System.EventHandler(this.btnStartRuntime_Click);
             // 
+            // btnTestClient
+            // 
+            this.btnTestClient.Location = new System.Drawing.Point(156, 70);
+            this.btnTestClient.Name = "btnTestClient";
+            this.btnTestClient.Size = new System.Drawing.Size(116, 23);
+            this.btnTestClient.TabIndex = 6;
+            this.btnTestClient.Text = "Test Client";
+            this.btnTestClient.UseVisualStyleBackColor = true;
+            this.btnTestClient.Click += new System.EventHandler(this.btnTestClient_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.btnTestClient);
             this.Controls.Add(this.btnStartRuntime);
             this.Controls.Add(this.btnMergeFiles);
             this.Controls.Add(this.btnTestIdentity);
@@ -121,5 +133,6 @@
         private System.Windows.Forms.Button btnTestIdentity;
         private System.Windows.Forms.Button btnMergeFiles;
         private System.Windows.Forms.Button btnStartRuntime;
+        private System.Windows.Forms.Button btnTestClient;
     }
 }

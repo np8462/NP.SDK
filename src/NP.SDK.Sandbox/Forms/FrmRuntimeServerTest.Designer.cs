@@ -1,4 +1,4 @@
-﻿namespace NP.SDK.Sandbox.Tests
+﻿namespace NP.SDK.Sandbox.Forms
 {
     partial class FrmRuntimeServerTest
     {

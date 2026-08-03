@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using NP.SDK.Core.Runtime;
+using NP.SDK.Contracts;
 
 namespace NP.SDK.Server.Sessions
 {
@@ -38,51 +39,44 @@ namespace NP.SDK.Server.Sessions
         }
 
         public RuntimeSession Create(
-    string name,
-    string transport)
+            IRuntimeClient client)
         {
+            if (client == null)
+            {
+                throw new ArgumentNullException("client");
+            }
+
             RuntimeSession session =
                 new RuntimeSession();
 
+            session.Name =
+                client.Name;
 
-            session.Name = name;
+            session.Client =
+                client;
 
-            session.Transport = transport;
+            session.Transport =
+                client.Transport == null
+                    ? String.Empty
+                    : client.Transport.GetType().Name;
 
-            session.Connected = true;
+            session.Connected =
+                client.Connected;
 
+            session.LastActivity =
+                DateTime.Now;
 
             _sessions.Add(
                 session.Id,
                 session);
 
-
             if (SessionCreated != null)
+            {
                 SessionCreated(session);
-
+            }
 
             return session;
         }
-        //public RuntimeSession Create(string name)
-        //{
-        //    RuntimeSession session =
-        //        new RuntimeSession();
-
-        //    session.Name = name;
-
-        //    session.Connected = true;
-
-        //    session.LastActivity = DateTime.Now;
-
-        //    _sessions.Add(session.Id, session);
-
-        //    if (SessionCreated != null)
-        //    {
-        //        SessionCreated(session);
-        //    }
-
-        //    return session;
-        //}
 
         public RuntimeSession Get(Guid id)
         {

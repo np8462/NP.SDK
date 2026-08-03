@@ -46,34 +46,37 @@ namespace NP.SDK.Server.Transport
         }
 
 
-
         public void Start()
         {
             if (_running)
                 return;
 
 
-            _server =
-                new WebSocketServer(
-                    Port);
+            try
+            {
+                _server =
+                    new WebSocketServer(
+                        Port);
 
 
-            _server.AddWebSocketService<RuntimeBehavior>(
-                "/runtime",
-                () =>
-                {
-                    return new RuntimeBehavior(this);
-                });
+                _server.AddWebSocketService<RuntimeBehavior>(
+                    "/runtime",
+                    () =>
+                    {
+                        return new RuntimeBehavior(this);
+                    });
 
 
-            _server.Start();
+                _server.Start();
 
-
-            _running = true;
-
-
-            //RaiseData(
-            //    "WebSocketTransport Started");
+                _running = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(
+                    "WebSocketTransport Start Error: "
+                    + ex.Message);
+            }
         }
 
 
@@ -165,9 +168,13 @@ namespace NP.SDK.Server.Transport
             protected override void OnMessage(
                 MessageEventArgs e)
             {
-                _owner.RaiseData(
-                    e.Data);
+                //_owner.RaiseData(
+                //    e.Data);
+                Console.WriteLine(
+    "SERVER RECEIVED : "
+    + e.Data);
 
+                base.OnMessage(e);
     //            JavaScriptSerializer serializer =
     //new JavaScriptSerializer();
 

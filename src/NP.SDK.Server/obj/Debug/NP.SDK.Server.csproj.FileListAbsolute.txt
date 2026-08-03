@@ -16,6 +16,5 @@ E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Server\bin\Debug\NP.SDK.Contracts.pdb
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Server\bin\Debug\NP.SDK.Core.pdb
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Server\obj\Debug\NP.SDK.Server.dll
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Server\obj\Debug\NP.SDK.Server.pdb
-E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Server\obj\Debug\NP.SDK.Server.csproj.AssemblyReference.cache
-E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Server\obj\Debug\NP.SDK.Server.csproj.CoreCompileInputs.cache
-E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Server\obj\Debug\NP.SDK.Server.csproj.CopyComplete
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Server\obj\Debug\NP.SDK.Server.csprojResolveAssemblyReference.cache
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Server\bin\Debug\Newtonsoft.Json.dll

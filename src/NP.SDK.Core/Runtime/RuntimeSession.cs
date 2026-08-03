@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NP.SDK.Contracts;
+using System;
 
 namespace NP.SDK.Core.Runtime
 {
@@ -64,5 +65,23 @@ namespace NP.SDK.Core.Runtime
             get;
             set;
         }
+
+        public IRuntimeClient Client
+        {
+            get;
+            set;
+        }
+        
+        //public IRuntimeClient Client
+        //{
+        //    get;
+        //    private set;
+        //}
+
+        //public void AttachClient(
+        //    IRuntimeClient client)
+        //{
+        //    Client = client;
+        //}
     }
 }

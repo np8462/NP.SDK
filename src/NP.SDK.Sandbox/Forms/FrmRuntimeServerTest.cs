@@ -11,7 +11,7 @@ using NP.SDK.Server.Hosting;
 using System.Net;
 using System.IO;
 
-namespace NP.SDK.Sandbox.Tests
+namespace NP.SDK.Sandbox.Forms
 {
     public partial class FrmRuntimeServerTest : Form
     {
