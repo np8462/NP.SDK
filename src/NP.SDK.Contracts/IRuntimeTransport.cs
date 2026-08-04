@@ -10,6 +10,11 @@ namespace NP.SDK.Contracts
             get;
         }
 
+        //RuntimeSession Session
+        //{
+        //    get;
+        //    set;
+        //}
 
         void Start();
 

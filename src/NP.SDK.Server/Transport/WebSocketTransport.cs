@@ -4,7 +4,9 @@ using WebSocketSharp;
 using WebSocketSharp.Server;
 using System.Web.Script.Serialization;
 using NP.SDK.Contracts.Messages;
-using NP.SDK.Contracts.Messages;
+using System.Collections.Generic;
+using NP.SDK.Core.Runtime;
+using NP.SDK.Server.Clients;
 
 
 namespace NP.SDK.Server.Transport
@@ -21,7 +23,10 @@ namespace NP.SDK.Server.Transport
 
 
         public event Action<string> DataReceived;
+        public event Action<WebSocketConnection> ClientConnected;
+        public event Action<WebSocketConnection> ClientDisconnected;
 
+        private readonly Dictionary<string, WebSocketConnection> _connections;
 
         public bool IsRunning
         {
@@ -42,7 +47,8 @@ namespace NP.SDK.Server.Transport
         public WebSocketTransport(
             int port = 5051)
         {
-            Port = port;
+            Port = port; 
+            _connections =        new Dictionary<string, WebSocketConnection>();
         }
 
 
@@ -147,8 +153,60 @@ namespace NP.SDK.Server.Transport
             }
         }
 
+        private void RaiseClientDisconnected(
+    WebSocketConnection connection)
+        {
+            Action<WebSocketConnection> handler =
+                ClientDisconnected;
 
+            if (handler != null)
+            {
+                handler(connection);
+            }
+        }
 
+        internal void AddConnection(
+            string id,
+            WebSocketConnection connection)
+        {
+            _connections[id] =
+                connection;
+
+            RaiseClientConnected(connection);
+        }
+
+        internal void RemoveConnection(
+    string id)
+        {
+            WebSocketConnection connection;
+
+            if (_connections.TryGetValue(
+                id,
+                out connection))
+            {
+                connection.Connected = false;
+
+                RaiseClientDisconnected(connection);
+
+                _connections.Remove(id);
+            }
+        }
+
+        private void RaiseClientConnected(
+    WebSocketConnection connection)
+        {
+            Action<WebSocketConnection> handler =
+                ClientConnected;
+
+    //        Console.WriteLine(
+    //"RaiseClientConnected : " +
+    //(handler == null ? "NULL" : "OK"));
+            
+            if (handler != null)
+            {
+                handler(connection);
+            }
+        }
 
         private class RuntimeBehavior :
             WebSocketBehavior
@@ -168,8 +226,8 @@ namespace NP.SDK.Server.Transport
             protected override void OnMessage(
                 MessageEventArgs e)
             {
-                //_owner.RaiseData(
-                //    e.Data);
+                _owner.RaiseData(
+                    e.Data);
                 Console.WriteLine(
     "SERVER RECEIVED : "
     + e.Data);
@@ -185,24 +243,38 @@ namespace NP.SDK.Server.Transport
     //            Dispatcher.Dispatch(message);
             }
 
-
-
             protected override void OnOpen()
             {
                 _owner.RaiseData(
                     "WebSocket Client Connected");
+
+
+                WebSocketConnection connection =
+                    new WebSocketConnection();
+
+
+                connection.Connected = true;
+
+                connection.LastActivity =
+                    DateTime.Now;
+
+
+                connection.EndPoint =
+                    Context.UserEndPoint.ToString();
+
+
+                _owner.AddConnection(
+                    ID,
+                    connection);
             }
-
-
 
             protected override void OnClose(
                 CloseEventArgs e)
             {
+                _owner.RemoveConnection(ID);
                 _owner.RaiseData(
                     "WebSocket Client Closed");
             }
-
-
 
             protected override void OnError(
                 WebSocketSharp.ErrorEventArgs e)

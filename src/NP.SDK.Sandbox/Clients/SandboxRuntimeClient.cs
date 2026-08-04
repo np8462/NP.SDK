@@ -58,6 +58,8 @@ namespace NP.SDK.Sandbox.Clients
             _sessionManager.Create(
                 _client);
 
+            //_server.SessionManager.Create(_client);
+
 
             RuntimeMessage message =
                 new RuntimeMessage();

@@ -1,11 +1,11 @@
-﻿using NP.SDK.Server.Transport;
+﻿using NP.SDK.Server.Hosting;
 using System;
 
 namespace NP.SDK.Sandbox.Server
 {
     public class SandboxRuntimeServer
     {
-        private WebSocketTransport _transport;
+        private RuntimeServer _server;
 
 
         public event Action<string> LogReceived;
@@ -13,7 +13,7 @@ namespace NP.SDK.Sandbox.Server
 
         private void Log(string text)
         {
-            if(LogReceived != null)
+            if (LogReceived != null)
                 LogReceived(text);
 
             Console.WriteLine(text);
@@ -25,27 +25,37 @@ namespace NP.SDK.Sandbox.Server
             Log("Starting Runtime Server");
 
 
-            _transport =
-                new WebSocketTransport();
+            _server =
+                new RuntimeServer();
 
 
-            _transport.Start();
+            _server.Logger.LogWritten +=
+                Logger_LogWritten;
 
 
-            Log("WebSocket Server Started");
+            _server.Start();
+
+
+            Log("Runtime Server Started");
+        }
+
+
+        private void Logger_LogWritten(
+            string message)
+        {
+            Log(message);
         }
 
 
         public void Stop()
         {
-            if(_transport != null)
+            if (_server != null)
             {
-                _transport.Stop();
+                _server.Stop();
             }
 
 
             Log("Runtime Server Stopped");
         }
-
     }
 }

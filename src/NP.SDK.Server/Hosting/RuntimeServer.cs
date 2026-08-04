@@ -9,6 +9,7 @@ using NP.SDK.Server.Sessions;
 using NP.SDK.Server.Transport;
 using NP.SDK.Contracts.Messages;
 using System.Web.Script.Serialization;
+using NP.SDK.Server.Clients;
 
 namespace NP.SDK.Server.Hosting
 {
@@ -21,7 +22,8 @@ namespace NP.SDK.Server.Hosting
         IRuntimeServer
     {
         private readonly List<IRuntimeTransport> _transports;
-
+        private WebSocketTransport _webSocketTransport;
+        
         private bool _running;
 
         public RuntimeServer()
@@ -29,22 +31,17 @@ namespace NP.SDK.Server.Hosting
             _transports =
                 new List<IRuntimeTransport>();
 
-
             Context =
                 new RuntimeContextService();
-
 
             Sessions =
                 new RuntimeSessionManager();
 
-
             Logger =
                 new RuntimeLogger();
 
-
             Dispatcher =
                 new MessageDispatcher();
-
 
             HttpTransport http =
                 new HttpTransport();
@@ -54,17 +51,17 @@ namespace NP.SDK.Server.Hosting
 
             AddTransport(http);
 
+            //AddTransport(
+            //    new WebSocketTransport());
+         
+            _webSocketTransport =
+    new WebSocketTransport();
+            _webSocketTransport.ClientConnected +=
+                WebSocketTransport_ClientConnected;
+            
             AddTransport(
-                new WebSocketTransport());
-
-    //        WebSocketTransport ws =
-    //new WebSocketTransport();
-
-    //        ws.MessageReceived +=
-    //            Dispatcher.Dispatch;
-
-    //        AddTransport(ws);
-
+                _webSocketTransport);
+            
             CommandDispatcher =
     new CommandDispatcher();
 
@@ -140,11 +137,33 @@ namespace NP.SDK.Server.Hosting
             foreach (IRuntimeTransport transport
                 in _transports)
             {
-                //transport.DataReceived +=
-                //    OnTransportDataReceived;
                 transport.DataReceived +=
                     Transport_DataReceived;
             }
+        }
+
+        private void WebSocketTransport_ClientConnected(
+            WebSocketConnection connection)
+        {
+            Logger.Write(
+    ">>> ClientConnected Event Fired");
+            RuntimeClient client =
+    new RuntimeClient(
+        connection.EndPoint,
+        _webSocketTransport);
+
+            //client.Connect();
+
+            RuntimeSession session =
+                Sessions.Create(client);
+
+            Logger.Write(
+                "Runtime Session Created : " +
+                session.Id);
+
+            Logger.Write(
+                "Session Count : " +
+                Sessions.Count);
         }
 
         private void Dispatcher_MessageReceived(
@@ -163,54 +182,7 @@ namespace NP.SDK.Server.Hosting
                     + message.Command);
             }
         }
-        //private void Dispatcher_MessageReceived(
-        //    RuntimeMessage message)
-        //{
-        //    Logger.Write(
-        //        "[" +
-        //        message.Source +
-        //        "] "
-        //        +
-        //        message.Command
-        //        +
-        //        " : "
-        //        +
-        //        message.Data);
-
-        //    //CommandDispatcher.Execute(message);
-        //    CommandDispatcher.Dispatch(message);
-        //}
-    //    private void Dispatcher_MessageReceived(
-    //RuntimeMessage message)
-    //    {
-    //        Logger.Write(
-    //            "Command : "
-    //            + message.Command);
-
-    //        CommandDispatcher.Execute(message);
-    //    }
-
-        //--------------------------------------------------
-        // Transport message
-        //--------------------------------------------------
-        //private void OnTransportDataReceived(
-        //    string data)
-        //{
-        //    RuntimeMessage message =
-        //        new RuntimeMessage();
-
-
-        //    message.Command =
-        //        "transport";
-
-
-        //    message.Data =
-        //        data;
-
-
-        //    Dispatcher.Dispatch(message);
-        //}
-
+        
         //--------------------------------------------------
         // Runtime message
         //--------------------------------------------------
@@ -342,5 +314,6 @@ namespace NP.SDK.Server.Hosting
 
             Dispatcher.Dispatch(message);
         }
+
     }
 }

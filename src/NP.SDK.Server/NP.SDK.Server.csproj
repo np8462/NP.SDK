@@ -61,6 +61,7 @@
     <Compile Include="Transport\ITransportConnection.cs" />
     <Compile Include="Transport\HttpTransport.cs" />
     <Compile Include="Transport\WebSocketClientTransport.cs" />
+    <Compile Include="Transport\WebSocketConnection.cs" />
     <Compile Include="Transport\WebSocketTransport.cs" />
   </ItemGroup>
   <ItemGroup>

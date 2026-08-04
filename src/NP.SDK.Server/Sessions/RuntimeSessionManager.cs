@@ -54,7 +54,7 @@ namespace NP.SDK.Server.Sessions
 
             session.Client =
                 client;
-
+            //client.Session = session;
             session.Transport =
                 client.Transport == null
                     ? String.Empty
