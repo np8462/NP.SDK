@@ -23,11 +23,15 @@ namespace NP.SDK.Server.Hosting
     {
         private readonly List<IRuntimeTransport> _transports;
         private WebSocketTransport _webSocketTransport;
-        
+        private readonly Dictionary<Guid, RuntimeClient> _clients;
+
         private bool _running;
 
         public RuntimeServer()
         {
+            _clients =
+    new Dictionary<Guid, RuntimeClient>();
+
             _transports =
                 new List<IRuntimeTransport>();
 
@@ -51,14 +55,18 @@ namespace NP.SDK.Server.Hosting
 
             AddTransport(http);
 
-            //AddTransport(
-            //    new WebSocketTransport());
-         
             _webSocketTransport =
-    new WebSocketTransport();
+               new WebSocketTransport();
+
+
             _webSocketTransport.ClientConnected +=
                 WebSocketTransport_ClientConnected;
-            
+
+
+            _webSocketTransport.ClientDisconnected +=
+                WebSocketTransport_ClientDisconnected;
+
+
             AddTransport(
                 _webSocketTransport);
             
@@ -152,7 +160,9 @@ namespace NP.SDK.Server.Hosting
         connection.EndPoint,
         _webSocketTransport);
 
-            //client.Connect();
+            _clients.Add(
+    connection.Id,
+    client);
 
             RuntimeSession session =
                 Sessions.Create(client);
@@ -315,5 +325,34 @@ namespace NP.SDK.Server.Hosting
             Dispatcher.Dispatch(message);
         }
 
+        private void WebSocketTransport_ClientDisconnected(
+    WebSocketConnection connection)
+        {
+            Logger.Write(
+                ">>> ClientDisconnected Event Fired");
+
+            RuntimeClient client;
+
+            if (!_clients.TryGetValue(
+                connection.Id,
+                out client))
+            {
+                return;
+            }
+
+            client.Disconnect();
+
+            if (client.Session != null)
+            {
+                client.Session.Disconnect();
+            }
+
+            _clients.Remove(
+                connection.Id);
+
+            Logger.Write(
+                "Runtime Session Disconnected : "
+                + client.Session.Id);
+        }
     }
 }

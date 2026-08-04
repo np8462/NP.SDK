@@ -4,7 +4,7 @@ using System;
 namespace NP.SDK.Core.Runtime
 {
     /// <summary>
-    /// Represents a connected runtime session.
+    /// Represents a runtime session.
     /// </summary>
     public class RuntimeSession
     {
@@ -12,11 +12,19 @@ namespace NP.SDK.Core.Runtime
         {
             Id = Guid.NewGuid();
 
-            CreatedAt = DateTime.Now;
+            CreatedAt =
+                DateTime.Now;
 
-            LastActivity = DateTime.Now;
+            LastActivity =
+                CreatedAt;
+
+            State =
+                RuntimeSessionState.Created;
         }
 
+        //--------------------------------------------------
+        // Identity
+        //--------------------------------------------------
 
         public Guid Id
         {
@@ -24,13 +32,21 @@ namespace NP.SDK.Core.Runtime
             private set;
         }
 
-
         public string Name
         {
             get;
             set;
         }
 
+        //--------------------------------------------------
+        // Client
+        //--------------------------------------------------
+
+        public IRuntimeClient Client
+        {
+            get;
+            set;
+        }
 
         public string Transport
         {
@@ -38,6 +54,25 @@ namespace NP.SDK.Core.Runtime
             set;
         }
 
+        //--------------------------------------------------
+        // State
+        //--------------------------------------------------
+
+        public RuntimeSessionState State
+        {
+            get;
+            private set;
+        }
+
+        public bool Connected
+        {
+            get;
+            private set;
+        }
+
+        //--------------------------------------------------
+        // Time
+        //--------------------------------------------------
 
         public DateTime CreatedAt
         {
@@ -45,13 +80,27 @@ namespace NP.SDK.Core.Runtime
             private set;
         }
 
+        public DateTime ConnectedAt
+        {
+            get;
+            private set;
+        }
+
+        public DateTime? DisconnectedAt
+        {
+            get;
+            private set;
+        }
 
         public DateTime LastActivity
         {
             get;
-            set;
+            private set;
         }
 
+        //--------------------------------------------------
+        // Context
+        //--------------------------------------------------
 
         public RuntimeContext Context
         {
@@ -59,29 +108,77 @@ namespace NP.SDK.Core.Runtime
             set;
         }
 
+        //--------------------------------------------------
+        // Duration
+        //--------------------------------------------------
 
-        public bool Connected
+        public TimeSpan Duration
         {
-            get;
-            set;
+            get
+            {
+                if (ConnectedAt == DateTime.MinValue)
+                {
+                    return TimeSpan.Zero;
+                }
+
+                DateTime end =
+                    DisconnectedAt ??
+                    DateTime.Now;
+
+                return end -
+                    ConnectedAt;
+            }
         }
 
-        public IRuntimeClient Client
-        {
-            get;
-            set;
-        }
-        
-        //public IRuntimeClient Client
-        //{
-        //    get;
-        //    private set;
-        //}
+        //--------------------------------------------------
+        // State Management
+        //--------------------------------------------------
 
-        //public void AttachClient(
-        //    IRuntimeClient client)
-        //{
-        //    Client = client;
-        //}
+        public void Connect()
+        {
+            Connected = true;
+
+            State =
+                RuntimeSessionState.Connected;
+
+            ConnectedAt =
+                DateTime.Now;
+
+            LastActivity =
+                ConnectedAt;
+
+            DisconnectedAt = null;
+        }
+
+        public void Disconnect()
+        {
+            Connected = false;
+
+            State =
+                RuntimeSessionState.Disconnected;
+
+            DisconnectedAt =
+                DateTime.Now;
+
+            LastActivity =
+                DisconnectedAt.Value;
+        }
+
+        public void Close()
+        {
+            Connected = false;
+
+            State =
+                RuntimeSessionState.Closed;
+
+            LastActivity =
+                DateTime.Now;
+        }
+
+        public void UpdateActivity()
+        {
+            LastActivity =
+                DateTime.Now;
+        }
     }
 }

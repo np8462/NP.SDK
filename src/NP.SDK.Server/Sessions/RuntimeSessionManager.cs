@@ -1,7 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using NP.SDK.Contracts;
 using NP.SDK.Core.Runtime;
-using NP.SDK.Contracts;
+using NP.SDK.Server.Clients;
+using System;
+using System.Collections.Generic;
 
 namespace NP.SDK.Server.Sessions
 {
@@ -18,9 +19,19 @@ namespace NP.SDK.Server.Sessions
                 new Dictionary<Guid, RuntimeSession>();
         }
 
+        //--------------------------------------------------
+        // Events
+        //--------------------------------------------------
+
         public event Action<RuntimeSession> SessionCreated;
 
+        public event Action<RuntimeSession> SessionDisconnected;
+
         public event Action<RuntimeSession> SessionRemoved;
+
+        //--------------------------------------------------
+        // Properties
+        //--------------------------------------------------
 
         public int Count
         {
@@ -38,6 +49,10 @@ namespace NP.SDK.Server.Sessions
             }
         }
 
+        //--------------------------------------------------
+        // Create
+        //--------------------------------------------------
+
         public RuntimeSession Create(
             IRuntimeClient client)
         {
@@ -46,43 +61,67 @@ namespace NP.SDK.Server.Sessions
                 throw new ArgumentNullException("client");
             }
 
+
             RuntimeSession session =
                 new RuntimeSession();
+
 
             session.Name =
                 client.Name;
 
+
             session.Client =
                 client;
-            //client.Session = session;
+
+            RuntimeClient runtimeClient =
+    client as RuntimeClient;
+
+            if (runtimeClient != null)
+            {
+                runtimeClient.Session =
+                    session;
+            }
+
             session.Transport =
                 client.Transport == null
                     ? String.Empty
                     : client.Transport.GetType().Name;
 
-            session.Connected =
-                client.Connected;
 
-            session.LastActivity =
-                DateTime.Now;
+
+            if (client.Connected)
+            {
+                session.Connect();
+            }
+
+
 
             _sessions.Add(
                 session.Id,
                 session);
+
+
 
             if (SessionCreated != null)
             {
                 SessionCreated(session);
             }
 
+
             return session;
         }
 
-        public RuntimeSession Get(Guid id)
+        //--------------------------------------------------
+        // Find
+        //--------------------------------------------------
+
+        public RuntimeSession Find(Guid id)
         {
             RuntimeSession session;
 
-            if (_sessions.TryGetValue(id, out session))
+            if (_sessions.TryGetValue(
+                id,
+                out session))
             {
                 return session;
             }
@@ -90,27 +129,111 @@ namespace NP.SDK.Server.Sessions
             return null;
         }
 
-        public bool Remove(Guid id)
+        public RuntimeSession Find(string id)
         {
-            RuntimeSession session;
+            Guid sessionId;
 
-            if (!_sessions.TryGetValue(id, out session))
+            if (!Guid.TryParse(id, out sessionId))
+            {
+                return null;
+            }
+
+            return Find(sessionId);
+        }
+
+        public RuntimeSession Find(IRuntimeClient client)
+        {
+            if (client == null)
+            {
+                return null;
+            }
+
+            foreach (RuntimeSession session in _sessions.Values)
+            {
+                if (session.Client == client)
+                {
+                    return session;
+                }
+            }
+
+            return null;
+        }
+
+        //--------------------------------------------------
+        // Disconnect
+        //--------------------------------------------------
+
+        public bool Disconnect(
+            IRuntimeClient client)
+        {
+            RuntimeSession session =
+                Find(client);
+
+
+            if(session == null)
             {
                 return false;
             }
 
-            _sessions.Remove(id);
 
-            if (SessionRemoved != null)
+            session.Disconnect();
+
+
+            if(SessionDisconnected != null)
             {
-                SessionRemoved(session);
+                SessionDisconnected(session);
             }
+
 
             return true;
         }
 
+        //--------------------------------------------------
+        // Remove
+        //--------------------------------------------------
+
+        public bool Remove(
+            Guid id)
+        {
+            RuntimeSession session =
+                Find(id);
+
+
+            if(session == null)
+            {
+                return false;
+            }
+
+
+            session.Close();
+
+
+            _sessions.Remove(id);
+
+
+
+            if(SessionRemoved != null)
+            {
+                SessionRemoved(session);
+            }
+
+
+            return true;
+        }
+
+        //--------------------------------------------------
+        // Maintenance
+        //--------------------------------------------------
+
         public void Clear()
         {
+            foreach(RuntimeSession session 
+                in _sessions.Values)
+            {
+                session.Close();
+            }
+
+
             _sessions.Clear();
         }
     }
