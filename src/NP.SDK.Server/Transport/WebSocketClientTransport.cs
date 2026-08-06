@@ -39,7 +39,6 @@ namespace NP.SDK.Server.Transport
             _url = url;
         }
 
-
         public void Start()
         {
             if (_running)
