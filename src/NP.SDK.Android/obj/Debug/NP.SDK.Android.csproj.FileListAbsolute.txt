@@ -1,0 +1,16 @@
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Android\bin\Debug\NP.SDK.Android.dll
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Android\bin\Debug\NP.SDK.Android.pdb
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Android\bin\Debug\NP.SDK.Android.apk
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Android\bin\Debug\NP.SDK.Android-Signed.apk
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Android\bin\Debug\Newtonsoft.Json.dll
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Android\bin\Debug\NP.SDK.Contracts.dll
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Android\bin\Debug\websocket-sharp.dll
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Android\bin\Debug\NP.SDK.Contracts.pdb
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Android\obj\Debug\NP.SDK.Android.dll
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Android\obj\Debug\NP.SDK.Android.pdb
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Android\obj\Debug\android\bin\NP.SDK.Android.apk
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Android\obj\Debug\res\layout\main.xml
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Android\obj\Debug\res\values\strings.xml
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Android\obj\Debug\res\drawable\icon.png
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Android\obj\Debug\R.cs.flag
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Android\obj\Debug\uploadflags.txt

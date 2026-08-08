@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NP.SDK.Android", "NP.SDK.Android.csproj", "{CBA90CEF-67D7-4913-9235-A2032449925F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBA90CEF-67D7-4913-9235-A2032449925F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBA90CEF-67D7-4913-9235-A2032449925F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBA90CEF-67D7-4913-9235-A2032449925F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBA90CEF-67D7-4913-9235-A2032449925F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
