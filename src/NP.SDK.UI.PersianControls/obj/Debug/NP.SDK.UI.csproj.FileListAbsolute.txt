@@ -4,4 +4,3 @@ E:\NotSaved\Projects\NP.SDK\src\NP.SDK.UI.PersianControls\obj\Debug\NP.SDK.UI.Pe
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.UI.PersianControls\obj\Debug\NP.SDK.UI.csproj.GenerateResource.Cache
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.UI.PersianControls\obj\Debug\NP.SDK.UI.PersianControls.dll
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.UI.PersianControls\obj\Debug\NP.SDK.UI.PersianControls.pdb
-E:\NotSaved\Projects\NP.SDK\src\NP.SDK.UI.PersianControls\obj\Debug\NP.SDK.UI.csprojResolveAssemblyReference.cache

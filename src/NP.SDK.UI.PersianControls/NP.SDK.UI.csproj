@@ -47,6 +47,12 @@
     <Compile Include="PersianControls\NPDateTextBox.Designer.cs">
       <DependentUpon>NPDateTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="PersianControls\NPMoneyTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PersianControls\NPMoneyTextBox.Designer.cs">
+      <DependentUpon>NPMoneyTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="PersianControls\NPPersianTextBox.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -1,0 +1,18 @@
+﻿[
+{
+  "Time": "2026-08-12 16:42:17",
+  "Message": "[2026-08-12 16:42:17] [Debug] Debug message"
+},
+{
+  "Time": "2026-08-12 16:42:17",
+  "Message": "[2026-08-12 16:42:17] [Info] Application started."
+},
+{
+  "Time": "2026-08-12 16:42:17",
+  "Message": "[2026-08-12 16:42:17] [Warning] This is a warning."
+},
+{
+  "Time": "2026-08-12 16:42:17",
+  "Message": "[2026-08-12 16:42:17] [Error] An error occurred.\r\nSystem.DivideByZeroException: Attempted to divide by zero.\r\n   at NP.SDK.Sandbox.Tests.LoggingTest.Run() in e:\\NotSaved\\Projects\\NP.SDK\\src\\NP.SDK.Sandbox\\Tests\\LoggingTest.cs:line 22"
+}
+]

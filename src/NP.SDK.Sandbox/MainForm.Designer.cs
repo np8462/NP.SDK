@@ -35,6 +35,7 @@
             this.btnMergeFiles = new System.Windows.Forms.Button();
             this.btnStartRuntime = new System.Windows.Forms.Button();
             this.btnTestClient = new System.Windows.Forms.Button();
+            this.btnNPMoneyTextBox = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnNPPersianTextBox
@@ -59,7 +60,7 @@
             // 
             // btnTestLogging
             // 
-            this.btnTestLogging.Location = new System.Drawing.Point(12, 70);
+            this.btnTestLogging.Location = new System.Drawing.Point(12, 99);
             this.btnTestLogging.Name = "btnTestLogging";
             this.btnTestLogging.Size = new System.Drawing.Size(116, 23);
             this.btnTestLogging.TabIndex = 2;
@@ -69,7 +70,7 @@
             // 
             // btnTestIdentity
             // 
-            this.btnTestIdentity.Location = new System.Drawing.Point(12, 99);
+            this.btnTestIdentity.Location = new System.Drawing.Point(12, 128);
             this.btnTestIdentity.Name = "btnTestIdentity";
             this.btnTestIdentity.Size = new System.Drawing.Size(116, 23);
             this.btnTestIdentity.TabIndex = 3;
@@ -107,11 +108,22 @@
             this.btnTestClient.UseVisualStyleBackColor = true;
             this.btnTestClient.Click += new System.EventHandler(this.btnTestClient_Click);
             // 
+            // btnNPMoneyTextBox
+            // 
+            this.btnNPMoneyTextBox.Location = new System.Drawing.Point(12, 70);
+            this.btnNPMoneyTextBox.Name = "btnNPMoneyTextBox";
+            this.btnNPMoneyTextBox.Size = new System.Drawing.Size(116, 23);
+            this.btnNPMoneyTextBox.TabIndex = 7;
+            this.btnNPMoneyTextBox.Text = "NPMoneyTextBox";
+            this.btnNPMoneyTextBox.UseVisualStyleBackColor = true;
+            this.btnNPMoneyTextBox.Click += new System.EventHandler(this.btnNPMoneyTextBox_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.btnNPMoneyTextBox);
             this.Controls.Add(this.btnTestClient);
             this.Controls.Add(this.btnStartRuntime);
             this.Controls.Add(this.btnMergeFiles);
@@ -134,5 +146,6 @@
         private System.Windows.Forms.Button btnMergeFiles;
         private System.Windows.Forms.Button btnStartRuntime;
         private System.Windows.Forms.Button btnTestClient;
+        private System.Windows.Forms.Button btnNPMoneyTextBox;
     }
 }
