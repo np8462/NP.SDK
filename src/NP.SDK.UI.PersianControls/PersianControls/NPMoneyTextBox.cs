@@ -149,6 +149,7 @@ namespace NP.SDK.UI.PersianControls.Controls
             _textBox.TextChanged +=
                 TextBox_TextChanged;
 
+            _textBox.KeyPress += _textBox_KeyPress;
             // -----------------------------------------
             // Add Controls
             // -----------------------------------------
@@ -161,6 +162,20 @@ namespace NP.SDK.UI.PersianControls.Controls
 
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        void _textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar == '.' && (DecimalPlaces == 0 || DecimalPlaces < 1 || DecimalPlaces == null))
+                    e.Handled = true;           
+                }
+            catch (Exception)
+            {
+                
+                throw;
+            }
         }
 
         #endregion
