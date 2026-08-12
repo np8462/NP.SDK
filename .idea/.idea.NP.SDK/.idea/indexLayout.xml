@@ -2,7 +2,9 @@
 <project version="4">
   <component name="UserContentModel">
     <attachedFolders />
-    <explicitIncludes />
+    <explicitIncludes>
+      <Path>src/NP.SDK.Security</Path>
+    </explicitIncludes>
     <explicitExcludes>
       <Path>docs</Path>
     </explicitExcludes>

@@ -22,3 +22,6 @@ E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\obj\Debug\NP.SDK.Sandbox.Forms.Fr
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\obj\Debug\NP.SDK.Sandbox.Forms.FrmRuntimeServerTest.resources
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\bin\Debug\Newtonsoft.Json.dll
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\obj\Debug\NP.SDK.Sandbox.Forms.PersianControls.FrmNPMoneyTextBoxTest.resources
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\bin\Debug\NP.SDK.Security.dll
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\bin\Debug\NP.SDK.Security.pdb
+E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Sandbox\obj\Debug\NP.SDK.Sandbox.Forms.FrmSecurityTest.resources

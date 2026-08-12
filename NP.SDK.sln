@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NP.SDK.Server", "src\NP.SDK
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NP.SDK.Android", "src\NP.SDK.Android\NP.SDK.Android.csproj", "{CBA90CEF-67D7-4913-9235-A2032449925F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NP.SDK.Security", "src\NP.SDK.Security\NP.SDK.Security.csproj", "{FD809D6C-80D1-44F0-B3FF-91E54BA477DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{CBA90CEF-67D7-4913-9235-A2032449925F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBA90CEF-67D7-4913-9235-A2032449925F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CBA90CEF-67D7-4913-9235-A2032449925F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{FD809D6C-80D1-44F0-B3FF-91E54BA477DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD809D6C-80D1-44F0-B3FF-91E54BA477DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD809D6C-80D1-44F0-B3FF-91E54BA477DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD809D6C-80D1-44F0-B3FF-91E54BA477DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

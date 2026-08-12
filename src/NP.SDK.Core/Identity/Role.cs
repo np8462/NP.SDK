@@ -58,5 +58,27 @@ namespace NP.SDK.Core.Identity
         {
             return Name;
         }
+
+        //public bool HasPermission(string permissionName)
+        //{
+        //    if (string.IsNullOrEmpty(permissionName))
+        //        return false;
+
+        //    foreach (IPermission permission in _permissions)
+        //    {
+        //        if (permission == null)
+        //            continue;
+
+        //        if (string.Equals(
+        //            permission.Name,
+        //            permissionName,
+        //            System.StringComparison.OrdinalIgnoreCase))
+        //        {
+        //            return true;
+        //        }
+        //    }
+
+        //    return false;
+        //}
     }
 }

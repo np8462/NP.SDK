@@ -36,6 +36,7 @@
             this.btnStartRuntime = new System.Windows.Forms.Button();
             this.btnTestClient = new System.Windows.Forms.Button();
             this.btnNPMoneyTextBox = new System.Windows.Forms.Button();
+            this.btnSecurityTest = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnNPPersianTextBox
@@ -118,11 +119,22 @@
             this.btnNPMoneyTextBox.UseVisualStyleBackColor = true;
             this.btnNPMoneyTextBox.Click += new System.EventHandler(this.btnNPMoneyTextBox_Click);
             // 
+            // btnSecurityTest
+            // 
+            this.btnSecurityTest.Location = new System.Drawing.Point(12, 157);
+            this.btnSecurityTest.Name = "btnSecurityTest";
+            this.btnSecurityTest.Size = new System.Drawing.Size(116, 23);
+            this.btnSecurityTest.TabIndex = 8;
+            this.btnSecurityTest.Text = "Security Test";
+            this.btnSecurityTest.UseVisualStyleBackColor = true;
+            this.btnSecurityTest.Click += new System.EventHandler(this.btnSecurityTest_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.btnSecurityTest);
             this.Controls.Add(this.btnNPMoneyTextBox);
             this.Controls.Add(this.btnTestClient);
             this.Controls.Add(this.btnStartRuntime);
@@ -147,5 +159,6 @@
         private System.Windows.Forms.Button btnStartRuntime;
         private System.Windows.Forms.Button btnTestClient;
         private System.Windows.Forms.Button btnNPMoneyTextBox;
+        private System.Windows.Forms.Button btnSecurityTest;
     }
 }

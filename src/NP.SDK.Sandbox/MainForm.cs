@@ -23,6 +23,7 @@ namespace NP.SDK.Sandbox
         FrmRuntimeServerTest frmRuntimeServerTest;
         FrmServerClientTest frmServerClientTest;
         FrmNPMoneyTextBoxTest frmNPMoneyTextBoxTest;
+        FrmSecurityTest frmSecurityTest;
 
         public MainForm()
         {
@@ -159,6 +160,13 @@ namespace NP.SDK.Sandbox
             if (frmNPMoneyTextBoxTest == null || frmNPMoneyTextBoxTest.IsDisposed)
                 frmNPMoneyTextBoxTest = new FrmNPMoneyTextBoxTest();
             frmNPMoneyTextBoxTest.Show();
+        }
+
+        private void btnSecurityTest_Click(object sender, EventArgs e)
+        {
+            if (frmSecurityTest == null || frmSecurityTest.IsDisposed)
+                frmSecurityTest = new FrmSecurityTest();
+            frmSecurityTest.Show();
         }
 
     }

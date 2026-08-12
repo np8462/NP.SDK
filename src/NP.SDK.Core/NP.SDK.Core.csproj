@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authorization\AuthorizationService.cs" />
     <Compile Include="Identity\Permission.cs" />
     <Compile Include="Identity\Role.cs" />
     <Compile Include="Identity\User.cs" />
@@ -51,9 +52,7 @@
     <Compile Include="Runtime\RuntimeSession.cs" />
     <Compile Include="Runtime\RuntimeSessionState.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Security\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\NP.SDK.Contracts\NP.SDK.Contracts.csproj">
       <Project>{b60e09d3-9866-4f1f-a1cc-20ced1c3ce03}</Project>

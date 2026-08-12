@@ -62,5 +62,41 @@ namespace NP.SDK.Core.Identity
         {
             return UserName;
         }
+
+        //public bool HasPermission(string permissionName)
+        //{
+        //    if (string.IsNullOrEmpty(permissionName))
+        //        return false;
+
+        //    foreach (IRole role in _roles)
+        //    {
+        //        if (role == null)
+        //            continue;
+
+        //        Role concreteRole = role as Role;
+
+        //        if (concreteRole != null &&
+        //            concreteRole.HasPermission(permissionName))
+        //        {
+        //            return true;
+        //        }
+
+        //        foreach (IPermission permission in role.Permissions)
+        //        {
+        //            if (permission == null)
+        //                continue;
+
+        //            if (string.Equals(
+        //                permission.Name,
+        //                permissionName,
+        //                System.StringComparison.OrdinalIgnoreCase))
+        //            {
+        //                return true;
+        //            }
+        //        }
+        //    }
+
+        //    return false;
+        //}
     }
 }

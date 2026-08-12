@@ -45,6 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clients\SandboxRuntimeClient.cs" />
+    <Compile Include="Forms\FrmSecurityTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSecurityTest.Designer.cs">
+      <DependentUpon>FrmSecurityTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmServerClientTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     <Compile Include="Server\SandboxRuntimeServer.cs" />
     <Compile Include="Tests\IdentityTest.cs" />
     <Compile Include="Tests\LoggingTest.cs" />
+    <EmbeddedResource Include="Forms\FrmSecurityTest.resx">
+      <DependentUpon>FrmSecurityTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmServerClientTest.resx">
       <DependentUpon>FrmServerClientTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +144,10 @@
     <ProjectReference Include="..\NP.SDK.Core\NP.SDK.Core.csproj">
       <Project>{d0acd8a9-37c0-4bd9-b24d-8ffe1cab638e}</Project>
       <Name>NP.SDK.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NP.SDK.Security\NP.SDK.Security.csproj">
+      <Project>{fd809d6c-80d1-44f0-b3ff-91e54ba477df}</Project>
+      <Name>NP.SDK.Security</Name>
     </ProjectReference>
     <ProjectReference Include="..\NP.SDK.Server\NP.SDK.Server.csproj">
       <Project>{6e9c7e11-0c0d-4922-af07-eac6c3ff3038}</Project>
