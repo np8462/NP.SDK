@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("NP.SDK.Android.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("NP.SDK.Android.RuntimeClient.Resource", IsApplication=true)]
 
-namespace NP.SDK.Android
+namespace NP.SDK.Android.RuntimeClient
 {
 	
 	

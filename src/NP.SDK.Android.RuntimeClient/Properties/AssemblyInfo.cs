@@ -6,11 +6,11 @@ using Android.App;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("NP.SDK.Android")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("NP.SDK.Android.RuntimeClient")]
+[assembly: AssemblyDescription("Android client for the local NP.SDK Runtime Server")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("NP.SDK.Android")]
+[assembly: AssemblyProduct("NP.SDK.Android.RuntimeClient")]
 [assembly: AssemblyCopyright("Copyright ©  2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

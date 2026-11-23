@@ -3,7 +3,7 @@ using NP.SDK.Contracts;
 using NP.SDK.Contracts.Messages;
 using WebSocketSharp;
 
-namespace NP.SDK.Android.Transport
+namespace NP.SDK.Android.RuntimeClient.Transport
 {
     public class AndroidWebSocketTransport :
         IRuntimeTransport

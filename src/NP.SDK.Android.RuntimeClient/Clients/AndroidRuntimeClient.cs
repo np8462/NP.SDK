@@ -1,8 +1,8 @@
 using System;
 using NP.SDK.Contracts.Messages;
-using NP.SDK.Android.Transport;
+using NP.SDK.Android.RuntimeClient.Transport;
 
-namespace NP.SDK.Android.Clients
+namespace NP.SDK.Android.RuntimeClient.Clients
 {
     public class AndroidRuntimeClient
     {
@@ -21,7 +21,7 @@ namespace NP.SDK.Android.Clients
                 handler(text);
             }
             global::Android.Util.Log.Debug(
-                                        "NP.SDK.Android",
+                                        "NP.SDK.Android.RuntimeClient",
                                         text);
         }
 

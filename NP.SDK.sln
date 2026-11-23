@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NP.SDK.UI", "src\NP.SDK.UI.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NP.SDK.Server", "src\NP.SDK.Server\NP.SDK.Server.csproj", "{6E9C7E11-0C0D-4922-AF07-EAC6C3FF3038}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NP.SDK.Android", "src\NP.SDK.Android\NP.SDK.Android.csproj", "{CBA90CEF-67D7-4913-9235-A2032449925F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NP.SDK.Android.RuntimeClient", "src\\NP.SDK.Android.RuntimeClient\\NP.SDK.Android.RuntimeClient.csproj", "{CBA90CEF-67D7-4913-9235-A2032449925F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NP.SDK.Security", "src\NP.SDK.Security\NP.SDK.Security.csproj", "{FD809D6C-80D1-44F0-B3FF-91E54BA477DF}"
 EndProject

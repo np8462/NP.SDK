@@ -2,12 +2,12 @@
 using Android.OS;
 using Android.Widget;
 using System;
-using NP.SDK.Android.Clients;
+using NP.SDK.Android.RuntimeClient.Clients;
 
-namespace NP.SDK.Android
+namespace NP.SDK.Android.RuntimeClient
 {
     [Activity(
-        Label = "NP.SDK Android",
+        Label = "NP.SDK Runtime Client",
         MainLauncher = true)]
     public class MainActivity :
         Activity
