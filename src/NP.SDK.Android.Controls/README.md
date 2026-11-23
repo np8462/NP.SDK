@@ -13,10 +13,10 @@ Reusable Xamarin.Android custom controls for NP.SDK.
 | `ConfirmedText` | Text displayed after confirmation |
 | `Progress` | Current drag progress (read-only) |
 | `IsConfirmed` | Confirmation state (read-only) |
-| `Confirmed` | Event raised once when confirmation succeeds |
+| `Confirmed` | Event raised once when confirmation succeeds |\n| `ProgressChanged` | Event raised when drag progress changes or the control resets |
 | `Reset()` | Resets the control for reuse |
 
-Property setters invalidate the view so runtime changes are immediately redrawn.
+Property setters invalidate the view so runtime changes are immediately redrawn. `ProgressChanged` lets a host observe live drag progress.
 
 ## Diagnostic test page
 
