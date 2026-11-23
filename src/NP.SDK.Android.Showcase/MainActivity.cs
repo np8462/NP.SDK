@@ -2,7 +2,6 @@ using System;
 using Android.App;
 using Android.Content;
 using Android.Graphics;
-using Android.Net;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
@@ -10,12 +9,19 @@ using NP.SDK.Android.Controls.Testing;
 
 namespace NP.SDK.Android.Showcase
 {
+	/*
     [Activity(Label = "NP.SDK Android Showcase", MainLauncher = true,
         Icon = "@android:drawable/sym_def_app_icon",
         Theme = "@android:style/Theme.Holo.Light.NoActionBar",
         ConfigurationChanges = Android.Content.PM.ConfigChanges.Orientation |
                                Android.Content.PM.ConfigChanges.ScreenSize)]
-    public class MainActivity : Activity
+*/
+	[Activity(Label = "NP.SDK Android Showcase", MainLauncher = true,
+	Icon = "@android:drawable/sym_def_app_icon",
+	Theme = "@android:style/Theme.Holo.Light.NoActionBar",
+	ConfigurationChanges = global::Android.Content.PM.ConfigChanges.Orientation |
+						   global::Android.Content.PM.ConfigChanges.ScreenSize)]
+	public class MainActivity : Activity
     {
         private LinearLayout _tabBar;
         private FrameLayout _content;
@@ -207,7 +213,7 @@ namespace NP.SDK.Android.Showcase
             button.SetAllCaps(false);
             button.Click += delegate
             {
-                try { StartActivity(new Intent(Intent.ActionView,System.Uri.Parse(url))); }
+                try { StartActivity(new Intent(Intent.ActionView,global::Android.Net.Uri.Parse(url))); }
                 catch (Exception) { Toast.MakeText(this, "Unable to open GitHub link.", ToastLength.Short).Show(); }
             };
             page.AddView(button);

@@ -1,0 +1,11 @@
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Showcase\bin\Debug\NP.SDK.Android.Showcase.dll
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Showcase\bin\Debug\NP.SDK.Android.Showcase.pdb
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Showcase\bin\Debug\com.np8462.npsdk.showcase.apk
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Showcase\bin\Debug\com.np8462.npsdk.showcase-Signed.apk
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Showcase\bin\Debug\NP.SDK.Android.Controls.dll
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Showcase\bin\Debug\NP.SDK.Android.Controls.pdb
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Showcase\obj\Debug\NP.SDK.Android.Showcase.dll
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Showcase\obj\Debug\NP.SDK.Android.Showcase.pdb
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Showcase\obj\Debug\android\bin\com.np8462.npsdk.showcase.apk
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Showcase\obj\Debug\R.cs.flag
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Showcase\obj\Debug\uploadflags.txt

@@ -1,0 +1,7 @@
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Showcase\obj\Debug\assemblies\NP.SDK.Android.Showcase.dll
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Showcase\obj\Debug\assemblies\Mono.Android.dll
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Showcase\obj\Debug\assemblies\mscorlib.dll
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Showcase\obj\Debug\assemblies\NP.SDK.Android.Controls.dll
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Showcase\obj\Debug\assemblies\System.Core.dll
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Showcase\obj\Debug\assemblies\System.dll
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Showcase\obj\Debug\assemblies\System.Xml.dll

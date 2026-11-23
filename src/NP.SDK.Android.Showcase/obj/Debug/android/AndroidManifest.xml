@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.np8462.npsdk.showcase" android:versionCode="1" android:versionName="1.0">
+  <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="22" />
+  <application android:label="NP.SDK Showcase" android:allowBackup="false" android:name="mono.android.app.Application" android:debuggable="true">
+    <activity android:configChanges="orientation|screenSize" android:icon="@android:drawable/sym_def_app_icon" android:label="NP.SDK Android Showcase" android:theme="@android:style/Theme.Holo.Light.NoActionBar" android:name="md56a3c3e3810224054720d148861b09935.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.np8462.npsdk.showcase.mono.MonoRuntimeProvider.__mono_init__" />
+    <receiver android:name="mono.android.Seppuku">
+      <intent-filter>
+        <action android:name="mono.android.intent.action.SEPPUKU" />
+        <category android:name="mono.android.intent.category.SEPPUKU.com.np8462.npsdk.showcase" />
+      </intent-filter>
+    </receiver>
+  </application>
+  <uses-permission android:name="android.permission.INTERNET" />
+</manifest>

@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NP.SDK.Android.Showcase", "NP.SDK.Android.Showcase.csproj", "{B82F83C2-2A34-4C9C-8C58-3B9F74E2D202}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B82F83C2-2A34-4C9C-8C58-3B9F74E2D202}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B82F83C2-2A34-4C9C-8C58-3B9F74E2D202}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B82F83C2-2A34-4C9C-8C58-3B9F74E2D202}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B82F83C2-2A34-4C9C-8C58-3B9F74E2D202}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
