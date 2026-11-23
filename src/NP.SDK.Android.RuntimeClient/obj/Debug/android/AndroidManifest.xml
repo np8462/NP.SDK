@@ -1,20 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="NP.SDK.Android" android:versionCode="1" android:versionName="1.0">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.np8462.npsdk.runtimeclient" android:versionCode="1" android:versionName="1.0">
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="22" />
-  <application android:label="NP.SDK.Android" android:icon="@drawable/icon" android:name="mono.android.app.Application" android:debuggable="true">
-    <activity android:label="NP.SDK Android" android:name="md5af33417b0ff0f2e23b30b449b1470f1d.MainActivity">
+  <application android:label="NP.SDK Runtime Client" android:icon="@drawable/icon" android:name="mono.android.app.Application" android:debuggable="true">
+    <activity android:label="NP.SDK Runtime Client" android:name="md54e0eea218a6a63d42034e82ef26c0c8d.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="NP.SDK.Android.mono.MonoRuntimeProvider.__mono_init__" />
+    <activity android:label="NP.SDK Controls Lab" android:name="md54e0eea218a6a63d42034e82ef26c0c8d.ControlsLabActivity" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.np8462.npsdk.runtimeclient.mono.MonoRuntimeProvider.__mono_init__" />
     <receiver android:name="mono.android.Seppuku">
       <intent-filter>
         <action android:name="mono.android.intent.action.SEPPUKU" />
-        <category android:name="mono.android.intent.category.SEPPUKU.NP.SDK.Android" />
+        <category android:name="mono.android.intent.category.SEPPUKU.com.np8462.npsdk.runtimeclient" />
       </intent-filter>
     </receiver>
   </application>

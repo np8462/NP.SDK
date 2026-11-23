@@ -207,7 +207,7 @@ namespace NP.SDK.Android.Showcase
             button.SetAllCaps(false);
             button.Click += delegate
             {
-                try { StartActivity(new Intent(Intent.ActionView, Uri.Parse(url))); }
+                try { StartActivity(new Intent(Intent.ActionView,System.Uri.Parse(url))); }
                 catch (Exception) { Toast.MakeText(this, "Unable to open GitHub link.", ToastLength.Short).Show(); }
             };
             page.AddView(button);

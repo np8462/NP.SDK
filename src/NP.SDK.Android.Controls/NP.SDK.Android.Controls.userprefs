@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{A91E72B1-1F23-4B8B-9B47-2A8E63D1C101}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.NP.SDK.Android.Controls PreferredExecutionTarget="Android.c2b5cc16" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Testing\SlideConfirmLabView.cs">
+    <Files>
+      <File FileName="Controls\SlideConfirmView.cs" Line="26" Column="19" />
+      <File FileName="Testing\SlideConfirmLabView.cs" Line="186" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

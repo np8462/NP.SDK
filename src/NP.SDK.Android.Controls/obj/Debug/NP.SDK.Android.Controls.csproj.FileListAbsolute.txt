@@ -1,0 +1,9 @@
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Controls\bin\Debug\NP.SDK.Android.Controls.dll
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Controls\bin\Debug\NP.SDK.Android.Controls.pdb
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Controls\bin\Debug\NP.SDK.Android.Controls.apk
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Controls\bin\Debug\NP.SDK.Android.Controls-Signed.apk
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Controls\obj\Debug\NP.SDK.Android.Controls.dll
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Controls\obj\Debug\NP.SDK.Android.Controls.pdb
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Controls\obj\Debug\android\bin\NP.SDK.Android.Controls.apk
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Controls\obj\Debug\R.cs.flag
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Android.Controls\obj\Debug\uploadflags.txt

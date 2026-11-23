@@ -104,7 +104,7 @@ namespace NP.SDK.Android.RuntimeClient
         {
             RunOnUiThread(delegate
             {
-                _txtLog.Append(DateTime.Now.ToString("HH:mm:ss") + " " + text + Environment.NewLine);
+                _txtLog.Append(DateTime.Now.ToString("HH:mm:ss") + " " + text + System.Environment.NewLine);
             });
         }
 

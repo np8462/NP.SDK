@@ -37,7 +37,7 @@ namespace NP.SDK.Android.Controls.Testing
             _slider.PromptText = "Slide to confirm";
             _slider.ConfirmedText = "Confirmed!";
             _slider.Confirmed += OnConfirmed;
-            _slider.ProgressChanged += delegate { _status.Text = GetStatusText(); };\n            _slider.ProgressChanged += delegate { _status.Text = GetStatusText(); };
+            _slider.ProgressChanged += delegate { _status.Text = GetStatusText(); };
 
             _status = new TextView(context);
             _eventLog = new TextView(context);
@@ -177,12 +177,14 @@ namespace NP.SDK.Android.Controls.Testing
 
             AddText(page, "PromptText", 13, Color.Rgb(65, 75, 85));
             _promptInput.Text = _slider.PromptText;
-            _promptInput.SingleLine = true;
-            page.AddView(_promptInput);
+			//_promptInput.SingleLine = true;
+			_promptInput.SetHorizontallyScrolling(true);
+			page.AddView(_promptInput);
 
             AddText(page, "ConfirmedText", 13, Color.Rgb(65, 75, 85));
             _confirmedInput.Text = _slider.ConfirmedText;
-            _confirmedInput.SingleLine = true;
+			_confirmedInput.SetHorizontallyScrolling(true);
+			//_confirmedInput.SingleLine = true;
             page.AddView(_confirmedInput);
 
             Button apply = MakeButton("Apply text properties");

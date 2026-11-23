@@ -79,8 +79,9 @@ public class MonoPackageManager {
 
 class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
-		"NP.SDK.Android.dll",
+		"NP.SDK.Android.RuntimeClient.dll",
 		"Newtonsoft.Json.dll",
+		"NP.SDK.Android.Controls.dll",
 		"NP.SDK.Contracts.dll",
 		"websocket-sharp.dll",
 	};

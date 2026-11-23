@@ -18,3 +18,13 @@ E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Server\obj\Debug\NP.SDK.Server.dll
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Server\obj\Debug\NP.SDK.Server.pdb
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Server\obj\Debug\NP.SDK.Server.csprojResolveAssemblyReference.cache
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Server\bin\Debug\Newtonsoft.Json.dll
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Server\bin\Debug\NP.SDK.Server.dll
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Server\bin\Debug\NP.SDK.Server.pdb
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Server\bin\Debug\Newtonsoft.Json.dll
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Server\bin\Debug\NP.SDK.Contracts.dll
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Server\bin\Debug\NP.SDK.Core.dll
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Server\bin\Debug\NP.SDK.Contracts.pdb
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Server\bin\Debug\NP.SDK.Core.pdb
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Server\obj\Debug\NP.SDK.Server.csprojResolveAssemblyReference.cache
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Server\obj\Debug\NP.SDK.Server.dll
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Server\obj\Debug\NP.SDK.Server.pdb

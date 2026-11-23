@@ -5,3 +5,10 @@ E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Security\bin\Debug\NP.SDK.Contracts.dll
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Security\bin\Debug\NP.SDK.Contracts.pdb
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Security\obj\Debug\NP.SDK.Security.dll
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Security\obj\Debug\NP.SDK.Security.pdb
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Security\bin\Debug\NP.SDK.Security.dll
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Security\bin\Debug\NP.SDK.Security.pdb
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Security\bin\Debug\NP.SDK.Contracts.dll
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Security\bin\Debug\NP.SDK.Contracts.pdb
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Security\obj\Debug\NP.SDK.Security.csprojResolveAssemblyReference.cache
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Security\obj\Debug\NP.SDK.Security.dll
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Security\obj\Debug\NP.SDK.Security.pdb

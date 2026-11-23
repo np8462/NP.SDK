@@ -2,3 +2,8 @@ E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Contracts\bin\Debug\NP.SDK.Contracts.dll
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Contracts\bin\Debug\NP.SDK.Contracts.pdb
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Contracts\obj\Debug\NP.SDK.Contracts.dll
 E:\NotSaved\Projects\NP.SDK\src\NP.SDK.Contracts\obj\Debug\NP.SDK.Contracts.pdb
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Contracts\bin\Debug\NP.SDK.Contracts.dll
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Contracts\bin\Debug\NP.SDK.Contracts.pdb
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Contracts\obj\Debug\NP.SDK.Contracts.csprojResolveAssemblyReference.cache
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Contracts\obj\Debug\NP.SDK.Contracts.dll
+E:\NotSaved\Projects\git\NP.SDK\src\NP.SDK.Contracts\obj\Debug\NP.SDK.Contracts.pdb

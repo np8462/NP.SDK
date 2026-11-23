@@ -1,4 +1,5 @@
 ﻿<Properties StartupConfiguration="{CBA90CEF-67D7-4913-9235-A2032449925F}|Default">
+  <MonoDevelop.Ide.ItemProperties.NP.SDK.Android.RuntimeClient PreferredExecutionTarget="Android.c2b5cc16" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.NP.SDK.Android PreferredExecutionTarget="Android.c2b5cc16" />
@@ -9,7 +10,7 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workbench ActiveDocument="MainActivity.cs">
     <Files>
-      <File FileName="MainActivity.cs" Line="31" Column="28" />
+      <File FileName="MainActivity.cs" Line="111" Column="44" />
     </Files>
   </MonoDevelop.Ide.Workbench>
 </Properties>
