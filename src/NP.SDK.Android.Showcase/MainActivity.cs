@@ -12,7 +12,7 @@ namespace NP.SDK.Android.Showcase
 {
     [Activity(Label = "NP.SDK Showcase", MainLauncher = true,
         Icon = "@android:drawable/sym_def_app_icon",
-        Theme = "@android:style/Theme.Material.Light",
+        Theme = "@android:style/Theme.Holo.Light.NoActionBar",
         ConfigurationChanges = Android.Content.PM.ConfigChanges.Orientation |
                                Android.Content.PM.ConfigChanges.ScreenSize)]
     public class MainActivity : Activity
