@@ -14,27 +14,43 @@ namespace NP.SDK.Android.Controls
     {
         private readonly Paint _paint = new Paint(PaintFlags.AntiAlias);
         private readonly RectF _track = new RectF();
-
         private float _progress;
-        private float _downX;
         private bool _dragging;
         private bool _confirmed;
+        private float _confirmThreshold;
+        private string _promptText;
+        private string _confirmedText;
 
         public event EventHandler Confirmed;
 
-        public float ConfirmThreshold { get; set; }
+        public float ConfirmThreshold
+        {
+            get { return _confirmThreshold; }
+            set
+            {
+                _confirmThreshold = Clamp(value);
+                Invalidate();
+            }
+        }
 
-        public string PromptText { get; set; }
-        public string ConfirmedText { get; set; }
+        public string PromptText
+        {
+            get { return _promptText; }
+            set { _promptText = value ?? String.Empty; Invalidate(); }
+        }
 
-        public SlideConfirmView(Context context)
-            : base(context)
+        public string ConfirmedText
+        {
+            get { return _confirmedText; }
+            set { _confirmedText = value ?? String.Empty; Invalidate(); }
+        }
+
+        public SlideConfirmView(Context context) : base(context)
         {
             Initialize();
         }
 
-        public SlideConfirmView(Context context, IAttributeSet attrs)
-            : base(context, attrs)
+        public SlideConfirmView(Context context, IAttributeSet attrs) : base(context, attrs)
         {
             Initialize();
         }
@@ -42,21 +58,14 @@ namespace NP.SDK.Android.Controls
         private void Initialize()
         {
             Clickable = true;
-            ConfirmThreshold = 0.85f;
-            PromptText = "Slide to commit";
-            ConfirmedText = "Confirmed";
+            _confirmThreshold = 0.85f;
+            _promptText = "Slide to commit";
+            _confirmedText = "Confirmed";
             SetBackgroundColor(Color.Transparent);
         }
 
-        public bool IsConfirmed
-        {
-            get { return _confirmed; }
-        }
-
-        public float Progress
-        {
-            get { return _progress; }
-        }
+        public bool IsConfirmed { get { return _confirmed; } }
+        public float Progress { get { return _progress; } }
 
         protected override void OnMeasure(int widthMeasureSpec, int heightMeasureSpec)
         {
@@ -69,15 +78,12 @@ namespace NP.SDK.Android.Controls
         protected override void OnDraw(Canvas canvas)
         {
             base.OnDraw(canvas);
-
             float width = Width;
             float height = Height;
-            if (width <= 0 || height <= 0)
-                return;
+            if (width <= 0 || height <= 0) return;
 
             float radius = height / 2f;
             _track.Set(0, 0, width, height);
-
             _paint.SetStyle(Paint.Style.Fill);
             _paint.Color = Color.Rgb(225, 230, 235);
             canvas.DrawRoundRect(_track, radius, radius, _paint);
@@ -90,14 +96,13 @@ namespace NP.SDK.Android.Controls
             _paint.Color = Color.Rgb(55, 65, 75);
             _paint.TextAlign = Paint.Align.Center;
             _paint.TextSize = height * 0.27f;
-            string label = _confirmed ? ConfirmedText : PromptText;
+            string label = _confirmed ? _confirmedText : _promptText;
             canvas.DrawText(label, width / 2f,
                 height / 2f - (_paint.Ascent() + _paint.Descent()) / 2f, _paint);
 
             float thumbX = radius + (_progress * Math.Max(0, width - height));
             _paint.Color = Color.White;
             canvas.DrawCircle(thumbX, radius, Math.Max(1, radius - 4), _paint);
-
             _paint.Color = Color.Rgb(45, 60, 70);
             _paint.TextSize = height * 0.52f;
             canvas.DrawText("›", thumbX,
@@ -106,52 +111,36 @@ namespace NP.SDK.Android.Controls
 
         public override bool OnTouchEvent(MotionEvent e)
         {
-            if (_confirmed)
-                return true;
-
+            if (_confirmed) return true;
             float height = Height;
             float width = Width;
-            if (height <= 0 || width <= height)
-                return false;
+            if (height <= 0 || width <= height) return false;
 
             float radius = height / 2f;
             float thumbX = radius + (_progress * (width - height));
-
             switch (e.Action)
             {
                 case MotionEventActions.Down:
-                    if (Math.Abs(e.GetX() - thumbX) > radius + 12)
-                        return false;
-
-                    _downX = e.GetX();
+                    if (Math.Abs(e.GetX() - thumbX) > radius + 12) return false;
                     _dragging = true;
                     Parent.RequestDisallowInterceptTouchEvent(true);
                     return true;
-
                 case MotionEventActions.Move:
-                    if (!_dragging)
-                        return false;
-
+                    if (!_dragging) return false;
                     _progress = Clamp((e.GetX() - radius) / (width - height));
                     Invalidate();
                     return true;
-
                 case MotionEventActions.Up:
-                    if (!_dragging)
-                        return false;
-
+                    if (!_dragging) return false;
                     _dragging = false;
                     Parent.RequestDisallowInterceptTouchEvent(false);
-
-                    if (_progress >= Clamp(ConfirmThreshold))
+                    if (_progress >= _confirmThreshold)
                     {
                         _progress = 1f;
                         _confirmed = true;
                         Invalidate();
-
                         EventHandler handler = Confirmed;
-                        if (handler != null)
-                            handler(this, EventArgs.Empty);
+                        if (handler != null) handler(this, EventArgs.Empty);
                     }
                     else
                     {
@@ -159,7 +148,6 @@ namespace NP.SDK.Android.Controls
                         Invalidate();
                     }
                     return true;
-
                 case MotionEventActions.Cancel:
                     _dragging = false;
                     Parent.RequestDisallowInterceptTouchEvent(false);
@@ -167,7 +155,6 @@ namespace NP.SDK.Android.Controls
                     Invalidate();
                     return true;
             }
-
             return true;
         }
 
