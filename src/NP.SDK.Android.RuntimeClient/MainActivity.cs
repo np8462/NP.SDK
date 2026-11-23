@@ -40,7 +40,7 @@ namespace NP.SDK.Android.RuntimeClient
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             menu.Add(0, 1001, 0, "Controls Lab");
-            return base.OnCreateOptionsMenu(menu);
+            return true;
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
