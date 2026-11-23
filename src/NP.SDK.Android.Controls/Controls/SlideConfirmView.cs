@@ -21,7 +21,8 @@ namespace NP.SDK.Android.Controls
         private string _promptText;
         private string _confirmedText;
 
-        public event EventHandler Confirmed;\n        public event EventHandler ProgressChanged;
+        public event EventHandler Confirmed;
+        public event EventHandler ProgressChanged;\n        public event EventHandler ProgressChanged;
 
         public float ConfirmThreshold
         {
@@ -129,6 +130,7 @@ namespace NP.SDK.Android.Controls
                     if (!_dragging) return false;
                     _progress = Clamp((e.GetX() - radius) / (width - height));
                     Invalidate();
+                    RaiseProgressChanged();
                     return true;
                 case MotionEventActions.Up:
                     if (!_dragging) return false;
@@ -139,6 +141,7 @@ namespace NP.SDK.Android.Controls
                         _progress = 1f;
                         _confirmed = true;
                         Invalidate();
+                        RaiseProgressChanged();
                         EventHandler handler = Confirmed;
                         if (handler != null) handler(this, EventArgs.Empty);
                     }
@@ -146,6 +149,7 @@ namespace NP.SDK.Android.Controls
                     {
                         _progress = 0f;
                         Invalidate();
+                        RaiseProgressChanged();
                     }
                     return true;
                 case MotionEventActions.Cancel:
@@ -153,6 +157,7 @@ namespace NP.SDK.Android.Controls
                     Parent.RequestDisallowInterceptTouchEvent(false);
                     _progress = 0f;
                     Invalidate();
+                    RaiseProgressChanged();
                     return true;
             }
             return true;
@@ -163,12 +168,19 @@ namespace NP.SDK.Android.Controls
             return Math.Max(0f, Math.Min(1f, value));
         }
 
+        private void RaiseProgressChanged()
+        {
+            EventHandler handler = ProgressChanged;
+            if (handler != null) handler(this, EventArgs.Empty);
+        }
+
         public void Reset()
         {
             _dragging = false;
             _confirmed = false;
             _progress = 0f;
             Invalidate();
+            RaiseProgressChanged();
         }
     }
 }
