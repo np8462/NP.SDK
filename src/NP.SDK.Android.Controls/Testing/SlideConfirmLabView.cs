@@ -36,7 +36,8 @@ namespace NP.SDK.Android.Controls.Testing
             _slider.ConfirmThreshold = 0.85f;
             _slider.PromptText = "Slide to confirm";
             _slider.ConfirmedText = "Confirmed!";
-            _slider.Confirmed += OnConfirmed;\n            _slider.ProgressChanged += delegate { _status.Text = GetStatusText(); };
+            _slider.Confirmed += OnConfirmed;
+            _slider.ProgressChanged += delegate { _status.Text = GetStatusText(); };\n            _slider.ProgressChanged += delegate { _status.Text = GetStatusText(); };
 
             _status = new TextView(context);
             _eventLog = new TextView(context);
