@@ -6,7 +6,7 @@ using Android.Net;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using NP.SDK.Android.Controls;
+using NP.SDK.Android.Controls.Testing;
 
 namespace NP.SDK.Android.Showcase
 {
@@ -20,7 +20,7 @@ namespace NP.SDK.Android.Showcase
         private LinearLayout _tabBar;
         private FrameLayout _content;
         private readonly string[] _tabs =
-            { "Confirm", "Buttons", "Progress", "Gestures", "Samples" };
+            { "SlideConfirm", "Buttons", "Progress", "Gestures", "Samples" };
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -42,7 +42,7 @@ namespace NP.SDK.Android.Showcase
             title.SetPadding(Dp(16), Dp(13), Dp(16), Dp(1));
 
             TextView subtitle = new TextView(this);
-            subtitle.Text = "Reusable custom controls • Interactive samples";
+            subtitle.Text = "Reusable custom controls • Interactive test laboratory";
             subtitle.TextSize = 12;
             subtitle.SetTextColor(Color.Rgb(220, 232, 240));
             subtitle.SetPadding(Dp(16), 0, Dp(16), Dp(12));
@@ -58,7 +58,6 @@ namespace NP.SDK.Android.Showcase
             tabScroll.HorizontalScrollBarEnabled = false;
             tabScroll.FillViewport = true;
             tabScroll.SetBackgroundColor(Color.Rgb(42, 67, 88));
-
             _tabBar = new LinearLayout(this);
             _tabBar.Orientation = Orientation.Horizontal;
 
@@ -90,30 +89,33 @@ namespace NP.SDK.Android.Showcase
             {
                 Button button = _tabBar.GetChildAt(i) as Button;
                 if (button != null)
-                {
-                    button.SetTextColor(i == index
-                        ? Color.Rgb(105, 220, 170) : Color.White);
-                }
+                    button.SetTextColor(i == index ? Color.Rgb(105, 220, 170) : Color.White);
             }
 
             _content.RemoveAllViews();
             View page;
             switch (index)
             {
-                case 0: page = BuildConfirmPage(); break;
-                case 1: page = BuildFuturePage("Buttons",
-                    "Button controls are the next planned group.",
-                    "Planned samples: icon button, loading button, outlined button, " +
-                    "toggle button and long-press action."); break;
-                case 2: page = BuildFuturePage("Progress",
-                    "Progress controls are reserved for the next iteration.",
-                    "Planned samples: linear progress, circular progress, " +
-                    "indeterminate loader and step progress."); break;
-                case 3: page = BuildFuturePage("Gestures",
-                    "Gesture controls will share this tab.",
-                    "Planned samples: swipe actions, swipe-to-dismiss, " +
-                    "drag handle and gesture surface."); break;
-                default: page = BuildSamplesPage(); break;
+                case 0:
+                    page = new SlideConfirmLabView(this);
+                    _content.AddView(page, new FrameLayout.LayoutParams(
+                        ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.MatchParent));
+                    return;
+                case 1:
+                    page = BuildFuturePage("Buttons",
+                        "Planned controls: icon, loading, outlined and toggle buttons.");
+                    break;
+                case 2:
+                    page = BuildFuturePage("Progress",
+                        "Planned controls: linear/circular progress and loading indicators.");
+                    break;
+                case 3:
+                    page = BuildFuturePage("Gestures",
+                        "Planned controls: swipe actions, swipe-to-dismiss and drag surfaces.");
+                    break;
+                default:
+                    page = BuildSamplesPage();
+                    break;
             }
 
             ScrollView scroll = new ScrollView(this);
@@ -122,58 +124,15 @@ namespace NP.SDK.Android.Showcase
             _content.AddView(scroll);
         }
 
-        private View BuildConfirmPage()
+        private View BuildFuturePage(string heading, string detail)
         {
             LinearLayout page = CreatePage();
-            AddHeading(page, "Slide to Confirm");
-            AddBody(page, "A reusable confirmation control. Drag the round handle " +
-                "to the right to confirm an action.");
-
-            SlideConfirmView slider = new SlideConfirmView(this);
-            slider.ConfirmThreshold = 0.85f;
-            slider.PromptText = "Slide to commit";
-            slider.ConfirmedText = "Committed!";
-            LinearLayout.LayoutParams sliderParams =
-                new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.MatchParent, Dp(56));
-            sliderParams.TopMargin = Dp(18);
-            sliderParams.BottomMargin = Dp(8);
-            page.AddView(slider, sliderParams);
-
-            TextView status = new TextView(this);
-            status.Text = "Status: waiting for confirmation";
-            status.TextSize = 14;
-            status.SetTextColor(Color.Rgb(70, 80, 90));
-            status.SetPadding(0, Dp(12), 0, Dp(8));
-            page.AddView(status);
-
-            slider.Confirmed += delegate
-            {
-                status.Text = "Status: confirmed — event raised";
-                status.SetTextColor(Color.Rgb(35, 125, 85));
-            };
-
-            Button reset = new Button(this);
-            reset.Text = "Reset control";
-            reset.SetAllCaps(false);
-            reset.Click += delegate
-            {
-                slider.Reset();
-                status.Text = "Status: waiting for confirmation";
-                status.SetTextColor(Color.Rgb(70, 80, 90));
-            };
-            page.AddView(reset);
-
-            AddSection(page, "Current features");
-            AddBullet(page, "Native Android View rendered with Canvas");
-            AddBullet(page, "Adjustable confirmation threshold");
-            AddBullet(page, "Confirmed event is raised once per confirmation");
-            AddBullet(page, "Reset() makes the control reusable");
-            AddBullet(page, "No third-party UI dependency");
-
-            AddLinkButton(page, "Open SlideConfirmView.cs",
-                "https://github.com/np8462/NP.SDK/blob/" + Branch +
-                "/src/NP.SDK.Android.Controls/Controls/SlideConfirmView.cs");
+            AddHeading(page, heading);
+            AddBody(page, detail);
+            AddBody(page, "This tab is an extension point. It will become interactive when the corresponding controls are implemented.");
+            AddLinkButton(page, "Browse Controls library",
+                "https://github.com/np8462/NP.SDK/tree/" + Branch +
+                "/src/NP.SDK.Android.Controls");
             return page;
         }
 
@@ -181,22 +140,15 @@ namespace NP.SDK.Android.Showcase
         {
             LinearLayout page = CreatePage();
             AddHeading(page, "C# Samples");
-            AddBody(page, "Add a project reference to NP.SDK.Android.Controls, " +
-                "then create and configure the control:");
+            AddBody(page, "The SlideConfirm tab contains a live property editor, event monitor and generated C# snippet. The same test page is also available from RuntimeClient.");
 
             TextView code = new TextView(this);
-            code.Text =
-                "var slider = new SlideConfirmView(this);\n" +
+            code.Text = "var slider = new SlideConfirmView(this);\n" +
                 "slider.ConfirmThreshold = 0.85f;\n" +
                 "slider.PromptText = \"Slide to commit\";\n" +
                 "slider.ConfirmedText = \"Done!\";\n\n" +
-                "slider.Confirmed += delegate\n" +
-                "{\n" +
-                "    CommitOperation();\n" +
-                "};\n\n" +
-                "layout.AddView(slider);\n\n" +
-                "// To reuse it:\n" +
-                "slider.Reset();";
+                "slider.Confirmed += delegate\n{\n    CommitOperation();\n};\n\n" +
+                "parentLayout.AddView(slider);\nslider.Reset();";
             code.Typeface = Typeface.Monospace;
             code.TextSize = 12;
             code.SetTextColor(Color.Rgb(35, 55, 70));
@@ -204,38 +156,20 @@ namespace NP.SDK.Android.Showcase
             code.SetPadding(Dp(12), Dp(12), Dp(12), Dp(12));
             page.AddView(code);
 
-            AddBody(page, "The sample above is also documented in the repository. " +
-                "Use the links below to inspect the implementation and project.");
-
-            AddLinkButton(page, "Control source: SlideConfirmView.cs",
+            AddLinkButton(page, "SlideConfirmView source",
                 "https://github.com/np8462/NP.SDK/blob/" + Branch +
                 "/src/NP.SDK.Android.Controls/Controls/SlideConfirmView.cs");
+            AddLinkButton(page, "Shared test page source",
+                "https://github.com/np8462/NP.SDK/blob/" + Branch +
+                "/src/NP.SDK.Android.Controls/Testing/SlideConfirmLabView.cs");
             AddLinkButton(page, "Controls library",
                 "https://github.com/np8462/NP.SDK/tree/" + Branch +
                 "/src/NP.SDK.Android.Controls");
-            AddLinkButton(page, "Showcase project and README",
+            AddLinkButton(page, "RuntimeClient integration",
                 "https://github.com/np8462/NP.SDK/tree/" + Branch +
-                "/src/NP.SDK.Android.Showcase");
+                "/src/NP.SDK.Android.RuntimeClient");
             AddLinkButton(page, "NP.SDK repository",
                 "https://github.com/np8462/NP.SDK");
-            return page;
-        }
-
-        private View BuildFuturePage(string heading, string title, string detail)
-        {
-            LinearLayout page = CreatePage();
-            AddHeading(page, heading);
-            AddBody(page, title);
-            AddBody(page, detail);
-            AddSection(page, "Showcase structure");
-            AddBullet(page, "A dedicated tab for this control family");
-            AddBullet(page, "Interactive preview will be added with the control");
-            AddBullet(page, "C# sample and direct GitHub source link");
-            AddBody(page, "This tab is intentionally a roadmap placeholder. " +
-                "Only Slide to Confirm is implemented in the current version.");
-            AddLinkButton(page, "Browse Controls library on GitHub",
-                "https://github.com/np8462/NP.SDK/tree/" + Branch +
-                "/src/NP.SDK.Android.Controls");
             return page;
         }
 
@@ -256,16 +190,6 @@ namespace NP.SDK.Android.Showcase
             page.AddView(view);
         }
 
-        private void AddSection(LinearLayout page, string text)
-        {
-            TextView view = new TextView(this);
-            view.Text = text;
-            view.TextSize = 15;
-            view.SetTextColor(Color.Rgb(40, 65, 85));
-            view.SetPadding(0, Dp(18), 0, Dp(4));
-            page.AddView(view);
-        }
-
         private void AddBody(LinearLayout page, string text)
         {
             TextView view = new TextView(this);
@@ -276,17 +200,16 @@ namespace NP.SDK.Android.Showcase
             page.AddView(view);
         }
 
-        private void AddBullet(LinearLayout page, string text)
-        {
-            AddBody(page, "•  " + text);
-        }
-
         private void AddLinkButton(LinearLayout page, string caption, string url)
         {
             Button button = new Button(this);
             button.Text = caption;
             button.SetAllCaps(false);
-            button.Click += delegate { OpenUrl(url); };
+            button.Click += delegate
+            {
+                try { StartActivity(new Intent(Intent.ActionView, Uri.Parse(url))); }
+                catch (Exception) { Toast.MakeText(this, "Unable to open GitHub link.", ToastLength.Short).Show(); }
+            };
             page.AddView(button);
         }
 
@@ -296,19 +219,5 @@ namespace NP.SDK.Android.Showcase
         }
 
         private const string Branch = "feature/android-controls-showcase";
-
-        private void OpenUrl(string url)
-        {
-            try
-            {
-                Intent intent = new Intent(Intent.ActionView, Uri.Parse(url));
-                StartActivity(intent);
-            }
-            catch (Exception)
-            {
-                Toast.MakeText(this, "Unable to open GitHub link.",
-                    ToastLength.Short).Show();
-            }
-        }
     }
 }
