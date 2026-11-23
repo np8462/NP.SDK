@@ -21,7 +21,7 @@ namespace NP.SDK.Android.Controls
         private string _promptText;
         private string _confirmedText;
 
-        public event EventHandler Confirmed;
+        public event EventHandler Confirmed;\n        public event EventHandler ProgressChanged;
 
         public float ConfirmThreshold
         {
