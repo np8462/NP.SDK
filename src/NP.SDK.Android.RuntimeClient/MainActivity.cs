@@ -16,6 +16,7 @@ namespace NP.SDK.Android.RuntimeClient
         private Button _btnConnect;
         private Button _btnSend;
         private Button _btnDisconnect;
+        private Button _btnControlsLab;
         private TextView _txtLog;
         private AndroidRuntimeClient _client;
 
@@ -29,12 +30,17 @@ namespace NP.SDK.Android.RuntimeClient
             _btnConnect = FindViewById<Button>(Resource.Id.btnConnect);
             _btnSend = FindViewById<Button>(Resource.Id.btnSend);
             _btnDisconnect = FindViewById<Button>(Resource.Id.btnDisconnect);
+            _btnControlsLab = FindViewById<Button>(Resource.Id.btnControlsLab);
             _txtLog = FindViewById<TextView>(Resource.Id.txtLog);
 
             _txtServerAddress.Text = "ws://192.168.1.14:5051/runtime";
             _btnConnect.Click += BtnConnect_Click;
             _btnSend.Click += BtnSend_Click;
             _btnDisconnect.Click += BtnDisconnect_Click;
+            _btnControlsLab.Click += delegate
+            {
+                StartActivity(new Intent(this, typeof(ControlsLabActivity)));
+            };
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
