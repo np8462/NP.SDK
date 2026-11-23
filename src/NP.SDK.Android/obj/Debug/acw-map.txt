@@ -1,4 +1,0 @@
-NP.SDK.Android.MainActivity, NP.SDK.Android;md5af33417b0ff0f2e23b30b449b1470f1d.MainActivity
-NP.SDK.Android.MainActivity, NP.SDK.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5af33417b0ff0f2e23b30b449b1470f1d.MainActivity
-NP.SDK.Android.MainActivity;md5af33417b0ff0f2e23b30b449b1470f1d.MainActivity
-np.sdk.android.MainActivity;md5af33417b0ff0f2e23b30b449b1470f1d.MainActivity

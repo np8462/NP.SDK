@@ -1,0 +1,9 @@
+﻿<Properties StartupConfiguration="{B82F83C2-2A34-4C9C-8C58-3B9F74E2D202}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.NP.SDK.Android.Showcase PreferredExecutionTarget="Android.c2b5cc16" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench />
+</Properties>

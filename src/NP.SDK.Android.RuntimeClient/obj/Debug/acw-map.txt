@@ -1,0 +1,16 @@
+NP.SDK.Android.RuntimeClient.MainActivity, NP.SDK.Android.RuntimeClient;md54e0eea218a6a63d42034e82ef26c0c8d.MainActivity
+NP.SDK.Android.RuntimeClient.MainActivity, NP.SDK.Android.RuntimeClient, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md54e0eea218a6a63d42034e82ef26c0c8d.MainActivity
+NP.SDK.Android.RuntimeClient.MainActivity;md54e0eea218a6a63d42034e82ef26c0c8d.MainActivity
+np.sdk.android.runtimeclient.MainActivity;md54e0eea218a6a63d42034e82ef26c0c8d.MainActivity
+NP.SDK.Android.RuntimeClient.ControlsLabActivity, NP.SDK.Android.RuntimeClient;md54e0eea218a6a63d42034e82ef26c0c8d.ControlsLabActivity
+NP.SDK.Android.RuntimeClient.ControlsLabActivity, NP.SDK.Android.RuntimeClient, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md54e0eea218a6a63d42034e82ef26c0c8d.ControlsLabActivity
+NP.SDK.Android.RuntimeClient.ControlsLabActivity;md54e0eea218a6a63d42034e82ef26c0c8d.ControlsLabActivity
+np.sdk.android.runtimeclient.ControlsLabActivity;md54e0eea218a6a63d42034e82ef26c0c8d.ControlsLabActivity
+NP.SDK.Android.Controls.SlideConfirmView, NP.SDK.Android.Controls;md5bca208a15b8315ec6c4003afad7f9515.SlideConfirmView
+NP.SDK.Android.Controls.SlideConfirmView, NP.SDK.Android.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5bca208a15b8315ec6c4003afad7f9515.SlideConfirmView
+NP.SDK.Android.Controls.SlideConfirmView;md5bca208a15b8315ec6c4003afad7f9515.SlideConfirmView
+np.sdk.android.controls.SlideConfirmView;md5bca208a15b8315ec6c4003afad7f9515.SlideConfirmView
+NP.SDK.Android.Controls.Testing.SlideConfirmLabView, NP.SDK.Android.Controls;md5809a4c366d8d76c2bd1ee79ffcc3c7eb.SlideConfirmLabView
+NP.SDK.Android.Controls.Testing.SlideConfirmLabView, NP.SDK.Android.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5809a4c366d8d76c2bd1ee79ffcc3c7eb.SlideConfirmLabView
+NP.SDK.Android.Controls.Testing.SlideConfirmLabView;md5809a4c366d8d76c2bd1ee79ffcc3c7eb.SlideConfirmLabView
+np.sdk.android.controls.testing.SlideConfirmLabView;md5809a4c366d8d76c2bd1ee79ffcc3c7eb.SlideConfirmLabView

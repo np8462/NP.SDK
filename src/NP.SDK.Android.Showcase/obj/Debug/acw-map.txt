@@ -1,0 +1,12 @@
+NP.SDK.Android.Showcase.MainActivity, NP.SDK.Android.Showcase;md56a3c3e3810224054720d148861b09935.MainActivity
+NP.SDK.Android.Showcase.MainActivity, NP.SDK.Android.Showcase, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56a3c3e3810224054720d148861b09935.MainActivity
+NP.SDK.Android.Showcase.MainActivity;md56a3c3e3810224054720d148861b09935.MainActivity
+np.sdk.android.showcase.MainActivity;md56a3c3e3810224054720d148861b09935.MainActivity
+NP.SDK.Android.Controls.SlideConfirmView, NP.SDK.Android.Controls;md5bca208a15b8315ec6c4003afad7f9515.SlideConfirmView
+NP.SDK.Android.Controls.SlideConfirmView, NP.SDK.Android.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5bca208a15b8315ec6c4003afad7f9515.SlideConfirmView
+NP.SDK.Android.Controls.SlideConfirmView;md5bca208a15b8315ec6c4003afad7f9515.SlideConfirmView
+np.sdk.android.controls.SlideConfirmView;md5bca208a15b8315ec6c4003afad7f9515.SlideConfirmView
+NP.SDK.Android.Controls.Testing.SlideConfirmLabView, NP.SDK.Android.Controls;md5809a4c366d8d76c2bd1ee79ffcc3c7eb.SlideConfirmLabView
+NP.SDK.Android.Controls.Testing.SlideConfirmLabView, NP.SDK.Android.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5809a4c366d8d76c2bd1ee79ffcc3c7eb.SlideConfirmLabView
+NP.SDK.Android.Controls.Testing.SlideConfirmLabView;md5809a4c366d8d76c2bd1ee79ffcc3c7eb.SlideConfirmLabView
+np.sdk.android.controls.testing.SlideConfirmLabView;md5809a4c366d8d76c2bd1ee79ffcc3c7eb.SlideConfirmLabView
