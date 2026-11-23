@@ -123,7 +123,6 @@ namespace NP.SDK.Android.Showcase
             AddBody(page, "Drag the round handle all the way to the right. " +
                 "The Confirmed event fires once when the threshold is reached.");
 
-            final_unused:
             SlideConfirmView slider = new SlideConfirmView(this);
             slider.ConfirmThreshold = 0.85f;
             slider.PromptText = "Slide to commit";
